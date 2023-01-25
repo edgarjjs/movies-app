@@ -1,0 +1,13 @@
+.search-container {
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    background-color: rgb(6, 55, 71);
+}
+
+.search-container input {
+    padding: 5px;
+    width: 200px;
+    border: 2px solid rgb(94, 94, 94);
+    border-radius: 5px;
+}

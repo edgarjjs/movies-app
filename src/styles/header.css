@@ -1,0 +1,12 @@
+.header {
+    background-color: rgb(6, 55, 71);
+    height: 60px;
+}
+
+.header h1 {
+    display: inline;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 70px;
+    padding-left: 15px;
+}

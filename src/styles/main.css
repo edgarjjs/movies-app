@@ -1,0 +1,19 @@
+section {
+    overflow-x: hidden;
+}
+
+section h3{
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.trends-container {
+    display: flex;
+    min-height: 200px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    min-height: 200px;
+}
