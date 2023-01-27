@@ -3,7 +3,21 @@
   padding: 0;
 }
 
+:root{
+  --font-color: #fff;
+  --bg-color: #09293a;
+  --bg-color-blur: #1b262cf3;
+  --primary: #123e55;
+  --secondary: #3282B8;
+  --font: 'Rubik', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
 #root {
-  width: 100%;
-  background-color: rgb(4, 34, 44);
+  position: relative;
+  height: 100vh;
 }

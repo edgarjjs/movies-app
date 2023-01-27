@@ -1,10 +1,10 @@
-import { Landing } from './pages/Landing'
+import { PrincipalRouter } from './router/PrincipalRouter'
 import './App.css'
 
 function App() {
 
   return (
-    <Landing /> 
+    <PrincipalRouter/> 
   )
 }
 
