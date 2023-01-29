@@ -5,11 +5,17 @@
 
 :root{
   --font-color: #fff;
-  --bg-color: #09293a;
+  --bg-color: #121212;
+  --bg-color-container: rgb(34, 34, 34);
   --bg-color-blur: #1b262cf3;
   --primary: #123e55;
-  --secondary: #3282B8;
+  --secondary: #F5C518;
   --font: 'Rubik', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--font);
 }
 
 body {

@@ -12,7 +12,6 @@ export const Header = ({
   setSearchIsOpen,
 }) => {
 
-
   return (
     <header className="header">
       <img

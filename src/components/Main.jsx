@@ -5,7 +5,7 @@ import "../styles/main.css";
 import { Nav } from "./Nav";
 import { Slider } from "./Slider";
 
-export const Main = () => {
+export const Main = ({children}) => {
   // const getData = () => {
   //   fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=" + API_KEY)
   //     .then(response => response.json())
@@ -14,9 +14,9 @@ export const Main = () => {
 
   return (
     <main className="main-container">
-      <Slider title='Peliculas en trending' path='/trending/movie/week'/>
-      <Slider title='Descubre películas' path='/discover/movie'/>
-      <Slider title='Series' path='/discover/tv'/>
+      {children}
+      {/* <Slider title='Descubre películas' path='/discover/movie'/>
+      <Slider title='Series' path='/discover/tv'/> */}
     </main>
   );
 };

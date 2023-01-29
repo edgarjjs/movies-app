@@ -18,7 +18,9 @@
 
 .movie-name {
     text-align: center;
+    text-decoration: none;
     font-family: var(--font);
+    font-weight: 200;
     font-size: 15px;
     padding: 5px;
 }
@@ -30,7 +32,7 @@
     font-family: var(--font);
     font-size: 10px;
     font-weight: 400;
-    background-color: var(--bg-color);
+    background-color: #000;
     padding: 5px;
     border-radius: 5px;
 }
