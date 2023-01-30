@@ -4,6 +4,7 @@ import { Search } from "../components/Search";
 import { Footer } from "../components/Footer";
 import { Nav } from "../components/Nav";
 import { Fetch } from "../components/Fetch";
+import { ActorCard } from "../components/ActorCard";
 
 export const Landing = ({ children, showHeader }) => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -28,7 +29,7 @@ export const Landing = ({ children, showHeader }) => {
       )}
 
       {children}
-      <Fetch />
+      {/* <Fetch /> */}
       {/* <Footer /> */}
     </>
   );

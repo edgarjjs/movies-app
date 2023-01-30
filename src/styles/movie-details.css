@@ -1,158 +1,187 @@
 .main-details-container {
-    position: relative;
-    width: 100%;
-    background-color: var(--bg-color-container)
-
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-color-container);
 }
 
 .backdrop-container {
-    width: 100%;
+  width: 100%;
 }
 
 .backdrop-image {
-    width: 100%;
+  width: 100%;
 }
 
 .backdrop-gradient {
-    position: absolute;
-    width: 100%;
-    height: 90px;
-    background-image: linear-gradient(to bottom, rgb(18, 18, 18, .9),rgb(18, 18, 18, .8), rgba(18, 18, 18, .7), rgba(18, 18, 18, 0));
-    z-index: 99;
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(18, 18, 18, 0.9),
+    rgb(18, 18, 18, 0.8),
+    rgba(18, 18, 18, 0.7),
+    rgba(18, 18, 18, 0)
+  );
+  z-index: 99;
 }
 
 .details-container {
-    position: relative;
-    top: -30px;
-    width: 100%;
-    border-radius: 0 30px 0 0;
+  position: relative;
+  top: -30px;
+  width: 100%;
+  border-radius: 0 30px 0 0;
 }
 
 .poster-container {
-    position: relative;
-    top: -25px;
-    display: flex;
-    align-items: center;
+  position: relative;
+  top: -25px;
+  display: flex;
+  align-items: center;
 }
 
 .poster-image {
-    width: 45%;
-    margin: 10px;
-    border-radius: 20px;
+  width: 45%;
+  margin: 10px;
+  border-radius: 20px;
 }
 
-.poster-aside h2{
-    padding: 10px;
-    margin-top: 25px;
-    font-family: var(--font);
-    font-size: 2.2rem;
-    color: lightgray;
+.poster-aside h2 {
+  padding: 10px;
+  margin-top: 25px;
+  font-family: var(--font);
+  font-size: 2.2rem;
+  color: lightgray;
 }
 
 .poster-aside-info {
-    margin-top: 10px;
-    padding-left: 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 4px;
+  margin-top: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
 }
 
-.poster-aside-info img{
-    width: 10%;
+.poster-aside-info img {
+  width: 10%;
 }
 
-.poster-aside-info p{
-    font-family: var(--font);
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: lightgray;
+.poster-aside-info p {
+  font-family: var(--font);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: lightgray;
 }
 
 .genres-container {
-    position: relative;
-    top: -20px;
+  position: relative;
+  height: 50px;
+  overflow-x: scroll;
+  top: -20px;
 }
 
 .genres-container ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 40px;
-    list-style: none;
-    gap: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  padding-left: 10px;
 }
 
 .genres-container ul li {
-    font-family: var(--font);
-    font-size: 1.7rem;
-    color: var(--font-color);
-    border: 1px solid lightgray;
-    border-radius: 6px;
-    padding: 5px;
+  font-family: var(--font);
+  font-size: 1.7rem;
+  color: var(--font-color);
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  padding: 5px;
 }
 
 .description {
-    position: relative;
-    top: -20px;
-    padding: 10px;
+  position: relative;
+  top: -20px;
+  padding: 10px;
 }
 
-.description h3{
-    position: relative;
-    padding: 0 0 20px 0;
-    font-family: var(--font);
-    font-size: 2rem;
-    text-align: start;
-    color: var(--secondary);
+.description h3 {
+  position: relative;
+  padding: 0 0 20px 0;
+  font-family: var(--font);
+  font-size: 2rem;
+  text-align: start;
+  color: var(--secondary);
 }
 
-.description p{
-    font-family: var(--font);
-    font-size: 1.8rem;
-    color: lightgray;
-    text-align: center;
+.description p {
+  font-family: var(--font);
+  font-size: 1.8rem;
+  color: lightgray;
+  text-align: center;
 }
 
 .details-summary {
-    text-align: center;
+  text-align: center;
 }
 
 .details-summary ol {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
 }
 
 .details-summary ol li {
-    width: 120px;
-    padding: 5px;
-    font-family: var(--font);
-    font-size: 1.8rem;
-    color: lightgray;
+  width: 120px;
+  padding: 5px;
+  font-family: var(--font);
+  font-size: 1.8rem;
+  color: lightgray;
 }
 
 .details-summary ol li h4 {
-    color: var(--secondary);
+  color: var(--secondary);
 }
 
-.button-show-more, .button-show-less {
-    margin-top: 15px;
-    padding: 6px;
-    border: none;
-    border-radius: 10px;
-    font-family: var(--font);
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #000;
-    background-color: var(--secondary);
+.button-show-more,
+.button-show-less {
+  margin-top: 15px;
+  padding: 6px;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000;
+  background-color: var(--secondary);
 }
-
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+.title-actors-section {
+  padding: 10px;
+  font-family: var(--font);
+  font-size: 2rem;
+  text-align: start;
+  color: var(--tertiary);
+}
+
+.main-actors-slider-content {
+  position: relative;
+  overflow-x: scroll;
+}
+
+.actors-slider {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: fit-content;
+  gap: 15px;
+  padding: 10px;
 }

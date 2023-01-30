@@ -1,0 +1,36 @@
+.actor-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 130px;
+  border-radius: 5px 40px 5px 40px;
+  background-color: lightseagreen;
+}
+
+.actor-photo {
+  width: 100%;
+  border-radius: 5px 40px 0 40px;
+}
+
+.actor-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.actor-name {
+  padding: 5px;
+  font-family: var(--font);
+  font-size: 1.7rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.actor-rol {
+  padding: 5px;
+  font-family: var(--font);
+  font-size: 1.4rem;
+  color: lightgray;
+  text-align: center;
+}

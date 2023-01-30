@@ -4,7 +4,7 @@ import { API_KEY } from "../key";
 
 import "../styles/main.css";
 
-export const Slider = ({ title, path, showHeader, setShowHeader }) => {
+export const Slider = ({ title, path }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -25,15 +25,13 @@ export const Slider = ({ title, path, showHeader, setShowHeader }) => {
     return <h2>Loading...</h2>;
   } else {
     return (
-      <div>
+      <>
         <div className="section-header">
           <h3>{title}</h3>
           <button className="button-more">Ver más</button>
         </div>
         <section className="slider-wrapper">
-          <div
-            className="slider-container"
-          >
+          <div className="slider-container">
             {data.map(
               (e, index) =>
                 index < 20 && (
@@ -54,7 +52,7 @@ export const Slider = ({ title, path, showHeader, setShowHeader }) => {
             )}
           </div>
         </section>
-      </div>
+      </>
     );
   }
 };
