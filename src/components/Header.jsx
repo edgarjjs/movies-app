@@ -3,7 +3,8 @@ import "../styles/header.css";
 import search from "../assets/search.svg";
 import menu from "../assets/menu.svg";
 import { Nav } from "./Nav";
-import { Search } from "./Search";
+import { Search } from "../components/Search/Search_UI.jsx";
+
 
 export const Header = ({
   menuToggle,

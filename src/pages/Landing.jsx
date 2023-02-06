@@ -1,25 +1,25 @@
 import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header";
-import { Search } from "../components/Search";
+import { Search } from "../components/Search/Search_UI.jsx";
 import { Footer } from "../components/Footer";
 import { Nav } from "../components/Nav";
 import { Fetch } from "../components/Fetch";
-import { ActorCard } from "../components/ActorCard";
+import { Slider } from "../components/Slider";
+import { Carrousel } from "../components/Carrousel/Carrousel";
 
-export const Landing = ({ children, showHeader }) => {
+export const Landing = ({}) => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [searchIsOpen, setSearchIsOpen] = useState(false);
 
   return (
     <>
-      {showHeader && (
-        <Header
-          setMenuToggle={setMenuToggle}
-          menuToggle={menuToggle}
-          searchIsOpen={searchIsOpen}
-          setSearchIsOpen={setSearchIsOpen}
-        />
-      )}
+      <Header
+        setMenuToggle={setMenuToggle}
+        menuToggle={menuToggle}
+        searchIsOpen={searchIsOpen}
+        setSearchIsOpen={setSearchIsOpen}
+      />
 
       {menuToggle && (
         <Nav menuToggle={menuToggle} setMenuToggle={setMenuToggle} />
@@ -28,7 +28,8 @@ export const Landing = ({ children, showHeader }) => {
         <Search searchIsOpen={searchIsOpen} setSearchIsOpen={setSearchIsOpen} />
       )}
 
-      {children}
+      <Outlet />
+
       {/* <Fetch /> */}
       {/* <Footer /> */}
     </>

@@ -12,18 +12,25 @@
   width: 100%;
 }
 
+.without-backdrop {
+  width: 100%;
+  height: calc(18vh);
+  background-color: #000;
+}
+
 .backdrop-gradient {
   position: absolute;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border-radius: 50px;
+  border: 2px solid #fff;
+}
+
+.backdrop-gradient img {
+  filter: invert(79%) sepia(73%) saturate(704%) hue-rotate(346deg) brightness(99%) contrast(93%);
   width: 100%;
-  height: 90px;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(18, 18, 18, 0.9),
-    rgb(18, 18, 18, 0.8),
-    rgba(18, 18, 18, 0.7),
-    rgba(18, 18, 18, 0)
-  );
-  z-index: 99;
 }
 
 .details-container {
@@ -31,6 +38,7 @@
   top: -30px;
   width: 100%;
   border-radius: 0 30px 0 0;
+  background-color: var(--bg-color-container);
 }
 
 .poster-container {
@@ -84,11 +92,11 @@
 .genres-container ul {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   list-style: none;
-  gap: 10px;
-  padding-left: 10px;
+  gap: 7px;
+  padding-left: 5px;
 }
 
 .genres-container ul li {
@@ -184,4 +192,8 @@
   width: fit-content;
   gap: 15px;
   padding: 10px;
+}
+
+.videos {
+  width: 100%;
 }

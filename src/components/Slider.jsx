@@ -1,37 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { MovieCard } from "./MovieCard";
-import { API_KEY } from "../key";
+import { getData } from "../tools/getData";
 
-import "../styles/main.css";
+import "../styles/slider.css";
 
 export const Slider = ({ title, path }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getData({ path }, setData);
+    getData(path, '&region=MX').then(res => {setData(res.results), setIsLoading(false)});
   }, []);
 
-  const getData = async () => {
-    const response = await fetch(
-      `https://api.themoviedb.org/3${path}?api_key=${API_KEY}&language=es`
-    );
-    const data = await response.json();
-    setData(data.results);
-    setIsLoading(false);
-  };
 
   if (isLoading) {
     return <h2>Loading...</h2>;
   } else {
     return (
-      <>
-        <div className="section-header">
+      <div className="main-slider-container">
+        <div className="slider-header">
           <h3>{title}</h3>
           <button className="button-more">Ver más</button>
         </div>
         <section className="slider-wrapper">
-          <div className="slider-container">
             {data.map(
               (e, index) =>
                 index < 20 && (
@@ -50,9 +41,8 @@ export const Slider = ({ title, path }) => {
                   />
                 )
             )}
-          </div>
         </section>
-      </>
+      </div>
     );
   }
 };

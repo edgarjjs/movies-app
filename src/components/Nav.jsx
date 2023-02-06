@@ -11,24 +11,20 @@ export const Nav = ({ menuToggle, setMenuToggle }) => {
       <div className="ul-container">
         <h3 className="page-name">Movies App</h3>
         <ul>
-          <li className="link">
+          <li>
             <NavLink
-              to="/home"
+              to="/"
               onClick={toggle}
-              className={({ isActive }) =>
-                isActive ? "link isActive" : "link"
-              }
+              className={({isActive}) => isActive ? 'isActive' : ''}
             >
               Inicio
             </NavLink>
           </li>
-          <li className="link">
+          <li className='link'>
             <NavLink
               to="/movies"
               onClick={toggle}
-              className={({ isActive }) =>
-                isActive ? "link isActive" : "link"
-              }
+              className={({isActive}) => isActive ? 'isActive' : ''}
             >
               Películas
             </NavLink>
@@ -37,9 +33,7 @@ export const Nav = ({ menuToggle, setMenuToggle }) => {
             <NavLink
               to="/series"
               onClick={toggle}
-              className={({ isActive }) =>
-                isActive ? "link isActive" : "link"
-              }
+              className={({isActive}) => isActive ? 'isActive' : ''}
             >
               Series
             </NavLink>
@@ -48,9 +42,7 @@ export const Nav = ({ menuToggle, setMenuToggle }) => {
             <NavLink
               to="/categories"
               onClick={toggle}
-              className={({ isActive }) =>
-                isActive ? "link isActive" : "link"
-              }
+              className={({isActive}) => isActive ? 'isActive' : ''}
             >
               Categorias
             </NavLink>
