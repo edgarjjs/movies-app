@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getData } from "../../tools/getData";
-
-import bg from "../../assets/background.jpg";
-import "./carrousel.css";
 import { CarrouselCard } from "./CarrouselCard";
+import back_button from "../../assets/back.png";
+
+import "./carrousel.css";
 
 export const Carrousel = ({ title, path }) => {
   const [data, setData] = useState([]);
@@ -12,18 +12,44 @@ export const Carrousel = ({ title, path }) => {
 
   useEffect(() => {
     getData(path, "&region=MX").then((res) => {
-      setData(res.results), setIsLoading(false);
+      setData(res.results);
+      setIsLoading(false);
     });
   }, []);
 
-  return (
-    <section className="carrousel-container">
-      <h2>{title}</h2>
+  const translate = { transform: `translateX(-${translatePorcent}%)` }
 
-      <div className="carrousel">
+  const next = () => {
+    setTranslatePorcent((prevState) => (prevState == 80 ? 0 : prevState + 20));
+  };
+
+  const prev = () => {
+    setTranslatePorcent((prevState) => (prevState == 0 ? 80 : prevState - 20));
+  };
+
+  return (
+    <section className="main-carrousel-container">
+
+      <h2>{title}</h2>
+      <img
+          src={back_button}
+          alt="button-Prev"
+          onClick={prev}
+          className="prev"
+        />
+
+        <img
+          src={back_button}
+          alt="button-Next"
+          onClick={next}
+          className="next"
+        />
+        
+      <div className="carrousel-container">
         <div
-          className="grande"
-          style={{ transform: `translateX(-${translatePorcent}%)` }}
+          className="carrousel-card-container"
+          style={translate}
+          onChange={(e) => console.log(e)}
         >
           {data.map(
             (e, index) =>
@@ -32,30 +58,14 @@ export const Carrousel = ({ title, path }) => {
                   background={e.backdrop_path}
                   poster={e.poster_path}
                   title={e.title}
-                  description={e.overview}
                   key={e.id}
+                  id={e.id}
                 />
               )
           )}
         </div>
-
-        <ul className="puntos">
-          {data.map(
-            (e, index) =>
-              index < 5 && (
-                <li
-                  key={e.id}
-                  onClick={() => setTranslatePorcent(index * 20)}
-                  className={
-                    translatePorcent == index || translatePorcent / index == 20
-                      ? "punto activo"
-                      : "punto"
-                  }
-                ></li>
-              )
-          )}
-        </ul>
       </div>
+
     </section>
   );
 };

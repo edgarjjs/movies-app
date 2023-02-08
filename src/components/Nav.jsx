@@ -38,7 +38,7 @@ export const Nav = ({ menuToggle, setMenuToggle }) => {
               Series
             </NavLink>
           </li>
-          <li className="link">
+          {/* <li className="link">
             <NavLink
               to="/categories"
               onClick={toggle}
@@ -46,7 +46,7 @@ export const Nav = ({ menuToggle, setMenuToggle }) => {
             >
               Categorias
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div

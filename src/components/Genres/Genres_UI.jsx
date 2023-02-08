@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getData } from "../../tools/getData";
 import { MovieCard } from "../MovieCard";
 import "./genres.css";
@@ -18,8 +18,10 @@ export const Genres_UI = () => {
       : getData(
           "/discover/movie",
           `&watch_region=MX&sort_by=vote_count.desc`
-        ).then((res) => setData(res.results))
+        ).then((res) => setData(res.results));
+
   }, [selectedGenre]);
+
 
   return (
     <>
@@ -27,8 +29,8 @@ export const Genres_UI = () => {
         <div className={`genre-item ${selectedGenre == 0 ? 'active' : ''}`} onClick={() => setSelectedGenre(0)}>Todos</div>
         {genres.map((genre) => (
           <div
-            className={`genre-item ${selectedGenre == genre.id ? 'active' : ''}`}
             key={genre.id}
+            className={`genre-item ${selectedGenre == genre.id ? 'active' : ''}`}
             onClick={() => setSelectedGenre(genre.id)}
           >
             {genre.name}

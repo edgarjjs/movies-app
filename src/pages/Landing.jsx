@@ -8,7 +8,7 @@ import { Fetch } from "../components/Fetch";
 import { Slider } from "../components/Slider";
 import { Carrousel } from "../components/Carrousel/Carrousel";
 
-export const Landing = ({}) => {
+export const Landing = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const [searchIsOpen, setSearchIsOpen] = useState(false);
 
@@ -27,11 +27,10 @@ export const Landing = ({}) => {
       {searchIsOpen && (
         <Search searchIsOpen={searchIsOpen} setSearchIsOpen={setSearchIsOpen} />
       )}
-
       <Outlet />
 
       {/* <Fetch /> */}
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
