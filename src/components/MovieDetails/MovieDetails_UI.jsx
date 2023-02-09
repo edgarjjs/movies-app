@@ -38,6 +38,7 @@ export const MovieDetails_UI = () => {
                   name={e.name}
                   photo={e.profile_path}
                   character={e.character}
+                  actorId={e.id}
                 />
               )
           )}

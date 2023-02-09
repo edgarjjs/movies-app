@@ -1,0 +1,163 @@
+.main-profile-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.person-details-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 0 15px 0;
+  border-radius: 0 0 15px 15px;
+  background-color: lightgrey;
+}
+
+.back-button-profile {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 15%;
+  border-radius: 50%;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid var(--secondary);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+
+
+  /*En caso de que no tenga foto de perfil*/
+  color: lightgray;
+  font-size: 1.6rem;
+  line-height: 160px;
+  text-align: center;
+}
+
+.person-name{
+  font-size: 2.1rem;
+}
+
+.deathday {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40%;
+  font-size: 1.3rem;
+  padding: 5px;
+  background-color: var(--bg-color);
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.flowers {
+  width: 15%;
+  filter: invert(100%) sepia(0%) saturate(7494%) hue-rotate(308deg) brightness(100%) contrast(99%);
+}
+
+.person-role {
+  font-size: 1.4rem;
+}
+
+.person-details {
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  padding: 8px 0;
+  text-align: center;
+  background-color: var(--bg-color);
+  border-radius: 15px;
+}
+
+.person-details strong {
+  color: var(--secondary);
+  font-size: 1rem;
+  padding: 0 2px;
+}
+
+.person-details div p {
+  color: lightgray;
+  font-size: 1rem;
+  padding: 0 2px;
+}
+
+.person-details div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.birthdate-icon {
+  width: 60%;
+  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(331deg) brightness(103%) contrast(101%);
+}
+
+.map-icon {
+  width: 40%;
+  filter: invert(63%) sepia(89%) saturate(1014%) hue-rotate(50deg) brightness(101%) contrast(106%);
+}
+
+.men-icon {
+  width: 70%;
+  filter: invert(65%) sepia(57%) saturate(3809%) hue-rotate(177deg) brightness(89%) contrast(91%);
+}
+
+.women-icon {
+  width: 70%;
+  filter: invert(46%) sepia(29%) saturate(5347%) hue-rotate(303deg) brightness(101%) contrast(101%);
+}
+
+.popularity-icon {
+  width: 50%;
+  filter: invert(63%) sepia(100%) saturate(447%) hue-rotate(359deg) brightness(104%) contrast(105%);
+}
+
+
+.biography {
+  padding: 10px;
+  text-align: center;
+}
+
+.biography h2 {
+  color: var(--secondary);
+  font-size: 1.8rem;
+}
+
+.biography p {
+  font-size: 1.2rem;
+  padding-top: 10px;
+  color: lightgrey;
+}
+
+.person-projects-container {
+  width: 100%;
+  background-color: var(--bg-color-container);
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+}
+
+.projects-container a {
+  text-decoration: none;
+}

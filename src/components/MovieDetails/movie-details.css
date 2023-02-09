@@ -194,6 +194,10 @@
   padding: 10px;
 }
 
+.actors-slider a {
+  text-decoration: none;
+}
+
 .videos {
   width: 100%;
 }

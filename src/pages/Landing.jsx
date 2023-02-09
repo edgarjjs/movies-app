@@ -30,7 +30,7 @@ export const Landing = () => {
       <Outlet />
 
       {/* <Fetch /> */}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
