@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Routes, Route, NavLink, HashRouter } from "react-router-dom";
 import { Landing } from "../pages/Landing";
-import { Main } from "../components/Main";
 import { MovieDetails_UI } from "../components/MovieDetails/MovieDetails_UI";
 import { Nav } from "../components/Nav";
-import { Slider } from "../components/Slider";
 import { Fetch } from "../components/Fetch";
 import { Carrousel } from "../components/Carrousel/Carrousel";
 import { Genres_UI } from "../components/Genres/Genres_UI";

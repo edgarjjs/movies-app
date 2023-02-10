@@ -43,16 +43,16 @@ export const PersonDetails = ({
         <></>
       )}
       <h2 className="person-name">{name ? name : 'Sin datos'}</h2>
-      <p className="person-role">{role ? name : 'Sin datos'}</p>
+      <p className="person-role">{role ? role : 'Sin datos'}</p>
       <div className="person-details">
         <div>
           <img src={birthdate_icon} className="birthdate-icon" />
-          <strong>Fecha de nacimiento:</strong>
+          <strong>Fecha de nacimiento</strong>
           <p>{birthDate ? birthDate : 'Sin datos'}</p>
         </div>
         <div>
           <img src={map_icon} className="map-icon" />
-          <strong>Lugar de nacimiento:</strong>
+          <strong>Lugar de nacimiento</strong>
           <p>{birthPlace ? birthPlace : 'Sin datos'}</p>
         </div>
         <div>
@@ -65,7 +65,7 @@ export const PersonDetails = ({
         </div>
         <div>
           <img src={popularity_icon} className="popularity-icon" />
-          <strong>Popularidad:</strong>
+          <strong>Popularidad</strong>
           <p>{popularity ? popularity.toFixed() + ' %' : 'Sin datos'}</p>
         </div>
       </div>

@@ -5,8 +5,6 @@ import { Search } from "../components/Search/Search_UI.jsx";
 import { Footer } from "../components/Footer";
 import { Nav } from "../components/Nav";
 import { Fetch } from "../components/Fetch";
-import { Slider } from "../components/Slider";
-import { Carrousel } from "../components/Carrousel/Carrousel";
 
 export const Landing = () => {
   const [menuToggle, setMenuToggle] = useState(false);

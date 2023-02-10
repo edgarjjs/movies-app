@@ -1,0 +1,148 @@
+.main-slider-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  height: 40px;
+}
+
+.slider-header div {
+  width: 50%;
+  height: 100%;
+}
+
+.slider-header img {
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.slider-header h3 {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+}
+
+.slider-wrapper {
+  display: flex;
+  width: 84%;
+  padding: 10px;
+  overflow-x: scroll;
+  margin-top: 10px;
+  scroll-snap-type: x mandatory;
+  
+  border-radius: 10px;
+}
+
+.slider-wrapper a {
+  text-decoration: none;
+  z-index: -1;
+}
+
+.slider-wrapper a:nth-child(1) {
+  padding-left: 50%;
+}
+
+.button-more {
+  margin-right: 5px;
+  padding: 7px;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font);
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: transparent;
+  color: #fff;
+}
+
+
+/*Estilos Custom Headers*/
+
+.custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 70px;
+}
+
+
+.custom-header.DisneyPlus img{
+  height: 90%;
+  padding: 5px;
+  border-radius: 10px;
+}
+.custom-header.DisneyPlus .button-more {
+  border: 1px solid #0DFFFF;
+}
+
+
+.custom-header.Netflix img {
+  width: 40%;
+}
+.custom-header.Netflix .button-more {
+  border: 1px solid red;
+}
+
+
+.custom-header.StarPlus img {
+  width: 40%;
+  padding: 5px;
+  border-radius: 10px;
+}
+.custom-header.StarPlus .button-more {
+  border: 1px solid #ff374f;
+}
+
+.custom-header.HBOMax img {
+  width: 45%;
+  padding: 7px;
+  border-radius: 10px;
+}
+.custom-header.HBOMax .button-more {
+  border: 1px solid #9e3df0;
+}
+
+.custom-header.ParamountPlus img {
+  width: 50%;
+}
+.custom-header.ParamountPlus .button-more {
+  border: 1px solid #fff;
+}
+
+
+/*Estilos Slider Wrapper Custom */
+
+.slider-wrapper.Netflix {
+  border-top: 3px solid red;
+  border-bottom: 3px solid red;
+}
+
+.slider-wrapper.DisneyPlus {
+  border-top: 3px solid #0DFFFF;
+  border-bottom: 3px solid #0DFFFF;
+}
+
+.slider-wrapper.StarPlus {
+  border-top: 3px solid #ff374f;
+  border-bottom: 3px solid #ff374f;
+}
+
+.slider-wrapper.HBOMax {
+  border-top: 3px solid #9e3df0;
+  border-bottom: 3px solid #9e3df0;
+}
+
+.slider-wrapper.ParamountPlus {
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
