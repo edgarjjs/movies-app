@@ -1,0 +1,25 @@
+.title-actors-section {
+  padding: 10px;
+  font-family: var(--font);
+  font-size: 2rem;
+  text-align: start;
+  color: var(--tertiary);
+}
+
+.main-actors-slider-content {
+  position: relative;
+  overflow-x: scroll;
+}
+
+.actors-slider {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: fit-content;
+  gap: 15px;
+  padding: 10px;
+}
+
+.actors-slider a {
+  text-decoration: none;
+}

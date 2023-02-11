@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export const CarrouselCard = ({ background, poster, title, id }) => {
+export const CarrouselCard = ({ type, background, poster, title, id }) => {
   const base_url = "https://image.tmdb.org/t/p/";
 
   return (
@@ -14,7 +14,7 @@ export const CarrouselCard = ({ background, poster, title, id }) => {
       <div className="carrousel-card-overview">
         <h3 className="carrousel-card-title">{title}</h3>
         <div className="carrousel-card-poster-container">
-          <NavLink to={"/movie_details/" + id}>
+          <NavLink to={"/details/" + type + "/"+ id}>
           </NavLink>
           <img
               className="carrousel-card-poster"

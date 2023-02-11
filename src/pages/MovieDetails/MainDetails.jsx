@@ -7,10 +7,11 @@ import back_button from "../../assets/back.png";
 
 import './movie-details.css'
 
+
+
 export const MainDetails = ({data, director}) => {
 
   const base_url = "https://image.tmdb.org/t/p/w780";
-
   const navigate = useNavigate();
 
   return (
@@ -38,9 +39,10 @@ export const MainDetails = ({data, director}) => {
     <div className="details-container">
 
       <div className="poster-container">
-        <img className="poster-image" src={base_url + data.poster_path} />
+        <img className="poster-image" src={data.poster_path && base_url + data.poster_path} />
         <div className="poster-aside">
-          <h2>{data.title}</h2>
+          <h2>{data.title ? data.title : data.name ? data.name : 'Sin datos'}</h2>
+          {data.tagline && <p>{data.tagline}</p>}
           <div className="poster-aside-info">
             <img src={star} alt="star-icon" />
             <p>
@@ -69,7 +71,7 @@ export const MainDetails = ({data, director}) => {
         <p>{data.overview}</p>
       </div>
 
-      <DetailsSummary data={data} director={director}/>
+      <DetailsSummary data={data} director={director ? director : ''} />
 
     </div>
   </section>

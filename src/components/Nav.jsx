@@ -31,7 +31,7 @@ export const Nav = ({ menuToggle, setMenuToggle }) => {
           </li>
           <li className="link">
             <NavLink
-              to="/series"
+              to="tv"
               onClick={toggle}
               className={({isActive}) => isActive ? 'isActive' : ''}
             >

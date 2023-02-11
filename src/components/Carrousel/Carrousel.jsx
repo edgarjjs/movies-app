@@ -5,7 +5,7 @@ import back_button from "../../assets/back.png";
 
 import "./carrousel.css";
 
-export const Carrousel = ({ title, path }) => {
+export const Carrousel = ({ type, title, path }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [translatePorcent, setTranslatePorcent] = useState(0);
@@ -55,6 +55,7 @@ export const Carrousel = ({ title, path }) => {
             (e, index) =>
               index < 5 && (
                 <CarrouselCard
+                  type={type}
                   background={e.backdrop_path}
                   poster={e.poster_path}
                   title={e.title}

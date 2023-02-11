@@ -9,19 +9,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 90%;
   height: 40px;
-}
-
-.slider-header div {
-  width: 50%;
-  height: 100%;
-}
-
-.slider-header img {
-  height: 100%;
-  border-radius: 10px;
-  padding: 10px;
 }
 
 .slider-header h3 {
@@ -32,30 +21,30 @@
   text-align: center;
 }
 
-.slider-wrapper {
-  display: flex;
-  width: 84%;
-  padding: 10px;
+
+/*Conteneder principal*/
+.cards-container {
+  width: 90%;
   overflow-x: scroll;
-  margin-top: 10px;
   scroll-snap-type: x mandatory;
-  
+  margin-top: 10px;
   border-radius: 10px;
+  border: 1px solid white;
+}
+/*Conteneder interno con overflow*/
+.cards-wrapper {
+  display: flex;
+  width: max-content;
+  padding: 15px;
+  margin-left: 50%;
+  z-index: 1;
 }
 
-.slider-wrapper a {
-  text-decoration: none;
-  z-index: -1;
-}
-
-.slider-wrapper a:nth-child(1) {
-  padding-left: 50%;
-}
 
 .button-more {
   margin-right: 5px;
   padding: 7px;
-  border: none;
+  border: 1px solid var(--secondary);
   border-radius: 10px;
   font-family: var(--font);
   font-size: 1.4rem;
@@ -120,29 +109,34 @@
 }
 
 
-/*Estilos Slider Wrapper Custom */
+/*Estilos custom cards container */
 
-.slider-wrapper.netflix {
+.cards-container.netflix {
+  border: none;
   border-top: 3px solid red;
   border-bottom: 3px solid red;
 }
 
-.slider-wrapper.disney {
+.cards-container.disney {
+  border: none;
   border-top: 3px solid #0DFFFF;
   border-bottom: 3px solid #0DFFFF;
 }
 
-.slider-wrapper.star {
+.cards-container.star {
+  border: none;
   border-top: 3px solid #ff374f;
   border-bottom: 3px solid #ff374f;
 }
 
-.slider-wrapper.hbo {
+.cards-container.hbo {
+  border: none;
   border-top: 3px solid #9e3df0;
   border-bottom: 3px solid #9e3df0;
 }
 
-.slider-wrapper.paramount {
+.cards-container.paramount {
+  border: none;
   border-top: 3px solid #fff;
   border-bottom: 3px solid #fff;
 }

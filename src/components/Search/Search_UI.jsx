@@ -16,9 +16,9 @@ export const Search = ({ searchIsOpen, setSearchIsOpen }) => {
       setApiResponse(
         data.sort(
           (a, b) =>
-            a.popularity -
-            b.popularity
-        ).reverse()
+            b.popularity -
+            a.popularity
+        )
       )
       
     );

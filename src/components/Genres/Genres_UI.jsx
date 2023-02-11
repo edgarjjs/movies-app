@@ -1,26 +1,25 @@
 import { useEffect, useRef, useState } from "react";
 import { getData } from "../../tools/getData";
-import { MovieCard } from "../MovieCard";
+import { MovieCard } from "../MovieCard/MovieCard";
 import "./genres.css";
 
-export const Genres_UI = () => {
+export const Genres_UI = ({ type }) => {
   const [genres, setGenres] = useState([]);
   const [data, setData] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState(0);
 
   useEffect(() => {
-    getData("/genre/movie/list").then((res) => setGenres(res.genres));
+    getData(`/genre/${type}/list`).then((res) => setGenres(res.genres));
     selectedGenre
       ? getData(
-        "/discover/movie",
+        `/discover/${type}`,
         `&watch_region=MX&sort_by=vote_count.desc&with_genres=${selectedGenre}`
       ).then((res) => setData(res.results))
       : getData(
-          "/discover/movie",
+          `/discover/${type}`,
           `&watch_region=MX&sort_by=vote_count.desc`
         ).then((res) => setData(res.results));
-
-  }, [selectedGenre]);
+  }, [type, selectedGenre]);
 
 
   return (
@@ -42,6 +41,7 @@ export const Genres_UI = () => {
         {data.map((e) => (
           <MovieCard
             key={e.id}
+            type={type}
             poster={e.poster_path}
             title={e.title}
             release={e.release_date}
