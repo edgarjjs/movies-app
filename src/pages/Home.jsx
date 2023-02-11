@@ -12,28 +12,28 @@ export const Home = () => {
       {/* <Carrousel title="Series en trending hoy" path="/trending/tv/day" /> */}
 
       <Slider
-        watchProvider="Netflix"
+        watchProvider="netflix"
         path="/discover/tv"
         query={`${sliderFilters}&with_watch_providers=8`}
       />
       <Slider
-        watchProvider="DisneyPlus"
+        watchProvider="disney"
         path="/discover/tv"
         query={`${sliderFilters}&with_watch_providers=337`}
       />
       <Slider
-        watchProvider="HBOMax"
+        watchProvider="hbo"
         path="/discover/tv"
         query={`${sliderFilters}&with_watch_providers=384`}
       />
       <Slider
-        watchProvider="StarPlus"
+        watchProvider="star"
         path="/discover/tv"
         query={`${sliderFilters}&with_watch_providers=619`}
       />
 
       <Slider
-        watchProvider="ParamountPlus"
+        watchProvider="paramount"
         path="/discover/tv"
         query={`${sliderFilters}&with_watch_providers=531`}
       />

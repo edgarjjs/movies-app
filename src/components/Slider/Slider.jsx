@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { MovieCard } from "../MovieCard";
 import { getData } from "../../tools/getData";
-import Netflix from "../../assets/providers/Netflix.svg";
-import DisneyPlus from "../../assets/providers/DisneyPlus.svg";
-import StarPlus from "../../assets/providers/StarPlus.svg";
-import HBOMax from "../../assets/providers/HBOMax.svg";
-import ParamountPlus from "../../assets/providers/ParamountPlus.svg";
+import DisneyPlus from "../../assets/watchProviders/DisneyPlus.svg"
+import HBOMax from "../../assets/watchProviders/HBOMax.svg"
+import Netflix from "../../assets/watchProviders/Netflix.svg"
+import ParamountPlus from "../../assets/watchProviders/ParamountPlus.svg"
+import StarPlus from "../../assets/watchProviders/StarPlus.svg"
+
 
 import "../Slider/slider.css";
 
@@ -17,9 +18,21 @@ export const Slider = ({ title, watchProvider, path, query }) => {
     getData(path, `${query ? query : ""}`).then((res) => setData(res.results));
   }, []);
 
+  // const watchProviders = [DisneyPlus, HBOMax, Netflix, ParamountPlus, StarPlus];
+  
+  const watchProviders = {
+    disney: DisneyPlus,
+    hbo: HBOMax,
+    netflix: Netflix,
+    paramount: ParamountPlus,
+    star: StarPlus
+  }
+
   if (isLoading) {
     return <h2>Loading...</h2>;
   } else {
+
+    console.log(watchProviders['disney'])
 
   
     return (
@@ -33,7 +46,7 @@ export const Slider = ({ title, watchProvider, path, query }) => {
           : 
           <div className={`custom-header ${watchProvider}`}>
             <img
-              src={`/react-movies-app/src/assets/providers/${watchProvider}.svg`}
+              src={watchProviders[watchProvider]}
               alt="watch-provider"
             />
             <button className="button-more">Ver más</button>

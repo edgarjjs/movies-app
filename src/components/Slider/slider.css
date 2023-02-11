@@ -76,73 +76,73 @@
 }
 
 
-.custom-header.DisneyPlus img{
+.custom-header.disney img{
   height: 90%;
   padding: 5px;
   border-radius: 10px;
 }
-.custom-header.DisneyPlus .button-more {
+.custom-header.disney .button-more {
   border: 1px solid #0DFFFF;
 }
 
 
-.custom-header.Netflix img {
+.custom-header.netflix img {
   width: 40%;
 }
-.custom-header.Netflix .button-more {
+.custom-header.netflix .button-more {
   border: 1px solid red;
 }
 
 
-.custom-header.StarPlus img {
+.custom-header.star img {
   width: 40%;
   padding: 5px;
   border-radius: 10px;
 }
-.custom-header.StarPlus .button-more {
+.custom-header.star .button-more {
   border: 1px solid #ff374f;
 }
 
-.custom-header.HBOMax img {
+.custom-header.hbo img {
   width: 45%;
   padding: 7px;
   border-radius: 10px;
 }
-.custom-header.HBOMax .button-more {
+.custom-header.hbo .button-more {
   border: 1px solid #9e3df0;
 }
 
-.custom-header.ParamountPlus img {
+.custom-header.paramount img {
   width: 50%;
 }
-.custom-header.ParamountPlus .button-more {
+.custom-header.paramount .button-more {
   border: 1px solid #fff;
 }
 
 
 /*Estilos Slider Wrapper Custom */
 
-.slider-wrapper.Netflix {
+.slider-wrapper.netflix {
   border-top: 3px solid red;
   border-bottom: 3px solid red;
 }
 
-.slider-wrapper.DisneyPlus {
+.slider-wrapper.disney {
   border-top: 3px solid #0DFFFF;
   border-bottom: 3px solid #0DFFFF;
 }
 
-.slider-wrapper.StarPlus {
+.slider-wrapper.star {
   border-top: 3px solid #ff374f;
   border-bottom: 3px solid #ff374f;
 }
 
-.slider-wrapper.HBOMax {
+.slider-wrapper.hbo {
   border-top: 3px solid #9e3df0;
   border-bottom: 3px solid #9e3df0;
 }
 
-.slider-wrapper.ParamountPlus {
+.slider-wrapper.paramount {
   border-top: 3px solid #fff;
   border-bottom: 3px solid #fff;
 }
