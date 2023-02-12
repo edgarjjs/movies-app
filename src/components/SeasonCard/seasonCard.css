@@ -1,0 +1,49 @@
+.season-card-poster {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+}
+
+.season-card-poster img {
+  width: 100%;
+}
+
+.season-card-poster a {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+}
+
+.poster-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.poster-header p {
+  padding: 5px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+
+.poster-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.poster-footer p {
+  padding: 5px;
+  font-size: 1.3rem;
+  text-align: center;
+  color: white;
+}
+.poster-footer p strong {
+  color: var(--secondary);
+}

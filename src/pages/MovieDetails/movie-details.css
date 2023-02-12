@@ -94,9 +94,12 @@
   color: lightgray;
 }
 
+
+
 .genres-container {
   position: relative;
-  height: 50px;
+  min-height: 20px;
+  padding: 5px;
   overflow-x: scroll;
   top: -20px;
 }
@@ -181,4 +184,18 @@
 
 .hidden {
   display: none;
+}
+
+.actors-title {
+  padding: 10px 0 0 10px;
+  font-size: 2rem;
+  color: var(--tertiary);
+}
+
+.seasons-title {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 2rem;
+  color: lightgray;
+  background-color: #000;
 }

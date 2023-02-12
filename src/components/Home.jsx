@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { API_KEY } from "../key";
 import { MainDetails } from "../pages/MovieDetails/MainDetails";
-import { ActorSlider_UI } from "./ActorSlider/ActorSlider_UI";
 import { Carrousel } from "./Carrousel/Carrousel";
-import { Fetch } from "./Fetch";
+import { Fetch } from "../fetch/Fetch";
 import { Slider } from "./Slider/Slider";
 
 export const Home = () => {
@@ -48,7 +47,7 @@ export const Home = () => {
         query={`${watchProviderQuery}531`}
       /> */}
 
-      {/* <Fetch /> */}
+      <Fetch />
     </>
   );
 };

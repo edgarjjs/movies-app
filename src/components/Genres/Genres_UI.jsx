@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { getData } from "../../tools/getData";
 import { MovieCard } from "../MovieCard/MovieCard";
 import "./genres.css";

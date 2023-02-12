@@ -1,0 +1,17 @@
+.slider-container {
+  display: flex;
+  position: relative;
+  overflow-x: scroll;
+  padding: 20px 0;
+}
+
+.cards-slider {
+  display: flex;
+  width: fit-content;
+  gap: 15px;
+  padding: 10px;
+}
+
+.cards-slider a {
+  text-decoration: none;
+}
