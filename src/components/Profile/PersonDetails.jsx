@@ -18,7 +18,7 @@ export const PersonDetails = ({
   deathday,
 }) => {
   const navigate = useNavigate();
-  const base_url = "https://image.tmdb.org/t/p/w185";
+  const base_url = "https://image.tmdb.org/t/p/original";
 
   return (
     <section className="person-details-container">

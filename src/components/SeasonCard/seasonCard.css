@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   width: 150px;
+  border-top: 2px solid white;
 }
 
 .season-card-poster img {

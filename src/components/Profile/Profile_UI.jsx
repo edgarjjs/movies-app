@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { MovieCard } from "../MovieCard/MovieCard";
 
 import "./profile.css";
+import { HomeButton } from "../HomeButton/HomeButton";
 
 export const Profile_UI = () => {
   const [data, setData] = useState([]);
@@ -18,6 +19,7 @@ export const Profile_UI = () => {
 
   return (
     <>
+      <HomeButton />
       <div className="main-profile-container">
         <PersonDetails
           birthDate={data.birthday}
@@ -48,6 +50,7 @@ export const Profile_UI = () => {
 
                 <MovieCard
                   key={e.id}
+                  type='movie'
                   poster={e.poster_path}
                   title={e.title}
                   release={e.release_date}

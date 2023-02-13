@@ -1,0 +1,47 @@
+.header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px;
+  gap: 30px;
+}
+
+.header-logo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.page-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.page-logo img {
+  height: 100%;
+}
+.page-logo p {
+  font-size: 2rem;
+  color: var(--secondary);
+}
+
+.burguer-button {
+  width: 40px;
+  filter: invert(80%) sepia(4%) saturate(7%) hue-rotate(7deg) brightness(88%) contrast(95%);
+}
+.burguer-button:active {
+  filter: invert(87%) sepia(47%) saturate(2988%) hue-rotate(347deg) brightness(100%) contrast(92%);
+}
+
+.search-button {
+  width: 35px;
+  filter: invert(80%) sepia(4%) saturate(7%) hue-rotate(7deg) brightness(88%) contrast(95%);
+}
+.search-button:active {
+  filter: invert(87%) sepia(47%) saturate(2988%) hue-rotate(347deg) brightness(100%) contrast(92%);
+}

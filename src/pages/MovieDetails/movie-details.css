@@ -20,17 +20,20 @@
   background-color: #000;
 }
 
-.backdrop-gradient {
-  position: absolute;
-  margin: 10px;
+
+/*Estilos botón de retroceso*/
+.backdrop-button {
+  position: fixed;
+  margin: 15px;
   width: 50px;
   height: 50px;
   background-color: #000;
   border-radius: 50px;
   border: 2px solid #fff;
+  z-index: 1;
 }
 
-.backdrop-gradient img {
+.backdrop-button img {
   filter: invert(79%) sepia(73%) saturate(704%) hue-rotate(346deg) brightness(99%) contrast(93%);
   width: 100%;
 }
@@ -111,7 +114,7 @@
   align-items: center;
   list-style: none;
   gap: 7px;
-  padding-left: 5px;
+  padding: 7px;
 }
 
 .genres-container ul li {
@@ -131,11 +134,13 @@
 
 .description h3 {
   position: relative;
-  padding: 0 0 20px 0;
+  display: inline-block;
+  padding: 5px 25px 15px 0;
   font-family: var(--font);
   font-size: 2rem;
   text-align: start;
   color: var(--secondary);
+  border-top: 2px solid var(--secondary);
 }
 
 .description p {
@@ -187,15 +192,20 @@
 }
 
 .actors-title {
-  padding: 10px 0 0 10px;
+  display: inline-block;
+  padding: 5px 25px 0 0;
+  margin: 10px 0 0 10px;
   font-size: 2rem;
   color: var(--tertiary);
+  border-top: 2px solid var(--tertiary);
 }
 
 .seasons-title {
-  padding-top: 20px;
+  margin-top: 20px;
+  padding-top: 10px;
   text-align: center;
   font-size: 2rem;
   color: lightgray;
   background-color: #000;
+  border-radius: 20px 20px 0 0;
 }

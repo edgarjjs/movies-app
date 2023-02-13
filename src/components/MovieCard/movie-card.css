@@ -20,6 +20,19 @@
     border-radius: 12px;
 }
 
+.without-poster {
+    width: 155px;
+    min-height: 220px;
+    background-color: #000;
+    border-radius: 12px;
+}
+.without-poster p {
+    color: white;
+    font-size: 1.8rem;
+    line-height: 220px;
+    text-align: center;
+}
+
 .movie-poster a {
     position: absolute;
     width: 80%;
@@ -32,6 +45,7 @@
     font-weight: 400;
     font-size: 1.5rem;
     padding: 5px;
+    color: white;
 }
 
 .movie-release-year {

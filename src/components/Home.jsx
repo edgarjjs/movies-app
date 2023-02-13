@@ -15,7 +15,7 @@ export const Home = () => {
       <Carrousel type='movie' title="Peliculas en trending hoy" path="/trending/movie/day" />
       {/* <Carrousel title="Series en trending hoy" path="/trending/tv/day" /> */}
 
-      {/* <Slider
+      <Slider
         type='tv'
         watchProvider="netflix"
         path="/discover/tv"
@@ -45,9 +45,9 @@ export const Home = () => {
         watchProvider="paramount"
         path="/discover/tv"
         query={`${watchProviderQuery}531`}
-      /> */}
+      />
 
-      <Fetch />
+      {/* <Fetch /> */}
     </>
   );
 };

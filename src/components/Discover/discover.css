@@ -1,0 +1,30 @@
+.main-providers-container {
+  width: 100%;
+  height: 70px;
+  margin: 20px 0;
+  background-color: lightgray;
+}
+
+.providers-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 10px 0 10px;
+  gap: 10px;
+  height: 100%;
+  list-style: none;
+  overflow-x: scroll;
+}
+
+.provider {
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: 10px 15px;
+  border: 1px solid var(--tertiary);
+  border-radius: 10px;
+}
+
+.active {
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
+}

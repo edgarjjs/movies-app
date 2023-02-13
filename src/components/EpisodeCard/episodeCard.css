@@ -1,0 +1,87 @@
+.card-episode {
+  max-width: 550px;
+  background-color: rgb(95, 95, 95);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.card-episode-background {
+  position: relative;
+  width: 100%;
+}
+
+.card-episode-background .image {
+  width: 100%;
+}
+
+.card-episode-background .title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  opacity: 80%;
+}
+
+.card-episode-background .title p {
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: white;
+  padding: 15px 10px;
+}
+
+.card-episode-background .title p strong {
+  color: var(--secondary);
+}
+
+
+
+.card-episode-background .info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 100%;
+}
+
+.episode-runtime {
+  font-size: 1.3rem;
+  color: white;
+  padding: 6px;
+  margin: 5px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.info-votes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  border-radius: 10px;
+}
+.info-votes img {
+  width: 20%;
+}
+.info-votes p {
+  font-size: 1.3rem;
+  color: white;
+  padding: 6px;
+}
+
+.card-details {
+  width: 100%;
+  font-size: 1.8rem;
+}
+
+.card-details p {
+  color: white;
+  font-size: 1.7rem;
+  padding: 10px;
+  border-left: 5px solid var(--tertiary);
+  border-top: 1px solid var(--tertiary);
+}

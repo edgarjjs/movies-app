@@ -6,6 +6,7 @@ import star from "../../assets/star.png";
 import back_button from "../../assets/back.png";
 
 import './movie-details.css'
+import { HomeButton } from "../../components/HomeButton/HomeButton";
 
 
 
@@ -17,9 +18,10 @@ export const MainDetails = ({data, director}) => {
   return (
 
     <section className="main-details-container">
+    <HomeButton />
 
     <div className="backdrop-container">
-      <div className="backdrop-gradient">
+      <div className="backdrop-button">
         <img
           src={back_button}
           alt="back-button"

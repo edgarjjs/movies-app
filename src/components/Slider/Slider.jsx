@@ -54,13 +54,8 @@ export const Slider = ({ type, title, watchProvider, path, query }) => {
                       key={e.id}
                       title={e.title || e.name}
                       poster={e.poster_path}
-                      release={
-                        e.release_date
-                          ? `${new Date(e.release_date).getFullYear()}`
-                          : e.first_air_date
-                          ? `Desde ${new Date(e.first_air_date).getFullYear()}`
-                          : `Sin info`
-                      }
+                      release={e.release_date}
+                      first_air_date={e.first_air_date}
                     />
                   )
               )}

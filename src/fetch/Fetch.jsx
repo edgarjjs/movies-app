@@ -13,7 +13,7 @@ export const Fetch = () => {
 
   const getData = async () => {
     const response = await fetch(
-      `https://api.themoviedb.org/3/tv/1399/season/1?api_key=${API_KEY}&language=es-MX`
+      `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&watch_region=MX&with_watch_providers=8&language=es-MX`
     );
     const result = await response.json();
     setData(result);

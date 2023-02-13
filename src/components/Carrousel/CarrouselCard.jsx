@@ -12,7 +12,6 @@ export const CarrouselCard = ({ type, background, poster, title, id }) => {
       />
 
       <div className="carrousel-card-overview">
-        <h3 className="carrousel-card-title">{title}</h3>
         <div className="carrousel-card-poster-container">
           <NavLink to={"/details/" + type + "/"+ id}>
           </NavLink>
@@ -21,6 +20,7 @@ export const CarrouselCard = ({ type, background, poster, title, id }) => {
               src={`${base_url}w300${poster}`}
             />
         </div>
+        <h3 className="carrousel-card-title">{title}</h3>
       </div>
     </article>
   );

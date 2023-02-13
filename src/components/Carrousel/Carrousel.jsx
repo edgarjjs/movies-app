@@ -49,7 +49,6 @@ export const Carrousel = ({ type, title, path }) => {
         <div
           className="carrousel-card-container"
           style={translate}
-          onChange={(e) => console.log(e)}
         >
           {data.map(
             (e, index) =>

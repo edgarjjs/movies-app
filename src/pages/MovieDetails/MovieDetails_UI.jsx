@@ -23,7 +23,6 @@ export const MovieDetails_UI = () => {
       type === "movie" &&
         setDirector(res.crew.filter((e) => e.job == "Director")[0].name);
     });
-    console.log(data);
   }, []);
 
   return (
@@ -46,16 +45,20 @@ export const MovieDetails_UI = () => {
         )}
       </CardSlider_UI>
 
-      <h3 className="seasons-title">Temporadas</h3>
-      <CardSlider_UI bg_color={"black"}>
-        {data.seasons &&
-          data.seasons.map(
-            (e) =>
-              e.season_number > 0 && (
-                <SeasonCard_UI season={e} key={e.id} id={data.id} />
-              )
-          )}
-      </CardSlider_UI>
+      {type === "tv" && (
+        <>
+          <h3 className="seasons-title">Temporadas</h3>
+          <CardSlider_UI bg_color={"black"}>
+            {data.seasons &&
+              data.seasons.map((e) => {
+                  if (e.season_number > 0 && e.episode_count > 0) {
+                    return (<SeasonCard_UI season={e} key={e.id} id={data.id} />)
+                  }
+              }
+              )}
+          </CardSlider_UI>
+        </>
+      )}
     </>
   );
 };
