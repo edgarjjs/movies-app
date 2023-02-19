@@ -5,7 +5,6 @@ import "./fetch.css";
 import poster from '../assets/poster.jpg'
 
 export const Fetch = () => {
-  const [data, setData] = useState([]);
 
   useEffect(() => {
     getData();
@@ -13,11 +12,13 @@ export const Fetch = () => {
 
   const getData = async () => {
     const response = await fetch(
-      `https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&watch_region=MX&with_watch_providers=8&language=es-MX`
+      `https://api.themoviedb.org/3/watch/providers/tv?api_key=${API_KEY}&languaje=es-MX&watch_region=MX`
     );
-    const result = await response.json();
-    setData(result);
-    console.log(data);
+    const results = await response.json();
+    const result = results.results
+    // console.log(result);
+
+    const data = result.map(e => console.log(e.provider_id, e.provider_name))
   };
 
 
