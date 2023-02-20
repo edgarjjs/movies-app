@@ -12,6 +12,9 @@
   --secondary: #F5C518;
   --tertiary: #20b2aa;
   --font: 'Rubik', sans-serif;
+  --filter-secondary: invert(87%) sepia(47%) saturate(2988%) hue-rotate(347deg) brightness(100%) contrast(92%);
+  --filter-tertiary: invert(54%) sepia(90%) saturate(388%) hue-rotate(128deg) brightness(90%) contrast(87%);
+  --filter-grey: invert(80%) sepia(4%) saturate(7%) hue-rotate(7deg) brightness(88%) contrast(95%);
 }
 
 html {
@@ -28,4 +31,18 @@ body {
   position: relative;
   height: 100vh;
   overflow-y: scroll;
+}
+
+@media (min-width:1500px) {
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #root {
+    width: 80%;
+  }
 }

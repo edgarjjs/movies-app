@@ -3,15 +3,17 @@ import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer";
 import { Fetch } from "../fetch/Fetch";
 
-export const Landing = () => {
+import './landing.css'
+
+export const Landing = ({ setProvider }) => {
 
   return (
     <>
+      <Header setProvider={setProvider}/>
 
-      <Header/>
-
-
-      <Outlet />
+      <main className="layout">
+        <Outlet />
+      </main>
 
       {/* <Fetch /> */}
       {/* <Footer /> */}

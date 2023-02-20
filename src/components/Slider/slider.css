@@ -1,8 +1,12 @@
-.main-slider-container {
-  padding: 20px;
+.main-sliders-container {
+  width: 100%;
+}
+
+.slider-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 .slider-header {
@@ -89,7 +93,7 @@
   border-radius: 10px;
 }
 .custom-header.star .button-more {
-  border: 1px solid #ff374f;
+  border: 1px solid #ff7a37;
 }
 
 .custom-header.hbo img {
@@ -125,8 +129,8 @@
 
 .cards-container.star {
   border: none;
-  border-top: 3px solid #ff374f;
-  border-bottom: 3px solid #ff374f;
+  border-top: 3px solid #ff7a37;
+  border-bottom: 3px solid #ff7a37;
 }
 
 .cards-container.hbo {
@@ -139,4 +143,17 @@
   border: none;
   border-top: 3px solid #fff;
   border-bottom: 3px solid #fff;
+}
+
+
+
+@media (min-width: 719px) {
+  .slider-container {
+    width: 40%;
+  }
+  .main-sliders-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }

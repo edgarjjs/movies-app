@@ -5,47 +5,61 @@ import { Carrousel } from "./Carrousel/Carrousel";
 import { Fetch } from "../fetch/Fetch";
 import { Slider } from "./Slider/Slider";
 
-export const Home = () => {
-
+export const Home = ({ setProvider }) => {
   const watchProviderQuery =
     "&watch_region=MX&with_genres=10751|10759|35&with_watch_providers=";
 
   return (
     <>
-      {/* <Carrousel type='movie' title="Peliculas en trending hoy" path="/trending/movie/day" /> */}
-      {/* <Carrousel title="Series en trending hoy" path="/trending/tv/day" /> */}
-
-      {/* <Slider
-        type='tv'
-        watchProvider="netflix"
-        path="/discover/tv"
-        query={`${watchProviderQuery}8`}
+      <Carrousel
+        type="movie"
+        title="Peliculas en trending hoy"
+        path="/trending/movie/day"
       />
-      <Slider
-        type='tv'
-        watchProvider="disney"
-        path="/discover/tv"
-        query={`${watchProviderQuery}337`}
-      />
-      <Slider
-        type='tv'
-        watchProvider="hbo"
-        path="/discover/tv"
-        query={`${watchProviderQuery}384`}
-      />
-      <Slider
-        type='tv'
-        watchProvider="star"
-        path="/discover/tv"
-        query={`${watchProviderQuery}619`}
+      <Carrousel
+        type="tv"
+        title="Series trending de la semana"
+        path="/trending/tv/week"
       />
 
-      <Slider
-        type='tv'
-        watchProvider="paramount"
-        path="/discover/tv"
-        query={`${watchProviderQuery}531`}
-      /> */}
+      <section className="main-sliders-container">
+        <Slider
+          type="tv"
+          watchProvider="netflix"
+          path="/discover/tv"
+          query={`${watchProviderQuery}8`}
+          setProvider={setProvider}
+        />
+        <Slider
+          type="tv"
+          watchProvider="disney"
+          path="/discover/tv"
+          query={`${watchProviderQuery}337`}
+          setProvider={setProvider}
+        />
+        <Slider
+          type="tv"
+          watchProvider="hbo"
+          path="/discover/tv"
+          query={`${watchProviderQuery}384`}
+          setProvider={setProvider}
+        />
+        <Slider
+          type="tv"
+          watchProvider="star"
+          path="/discover/tv"
+          query={`${watchProviderQuery}619`}
+          setProvider={setProvider}
+        />
+
+        <Slider
+          type="tv"
+          watchProvider="paramount"
+          path="/discover/tv"
+          query={`${watchProviderQuery}531`}
+          setProvider={setProvider}
+        />
+      </section>
 
       {/* <Fetch /> */}
     </>

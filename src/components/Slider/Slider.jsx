@@ -8,8 +8,9 @@ import ParamountPlus from "../../assets/watchProviders/ParamountPlus.svg";
 import StarPlus from "../../assets/watchProviders/StarPlus.svg";
 
 import "../Slider/slider.css";
+import { Link } from "react-router-dom";
 
-export const Slider = ({ type, title, watchProvider, path, query }) => {
+export const Slider = ({ type, title, watchProvider, path, query, setProvider }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -25,11 +26,12 @@ export const Slider = ({ type, title, watchProvider, path, query }) => {
     star: StarPlus,
   };
 
+
   if (isLoading) {
     return <h2>Loading...</h2>;
   } else {
     return (
-      <div className="main-slider-container">
+      <div className="slider-container">
         {title ? (
           <div className="slider-header">
             <h3>{title}</h3>
@@ -38,12 +40,14 @@ export const Slider = ({ type, title, watchProvider, path, query }) => {
         ) : (
           <div className={`custom-header ${watchProvider}`}>
             <img src={watchProviders[watchProvider]} alt="watch-provider" />
-            <button className="button-more">Ver más</button>
+            <button className="button-more">
+              <Link to={`/tv`} onClick={() => setProvider(8)}>Ver más</Link>
+            </button>
           </div>
         )}
 
         <div className={`cards-container ${watchProvider}`}>
-          <section className='cards-wrapper'>
+          <section className="cards-wrapper">
             {data &&
               data.map(
                 (e, index) =>
@@ -61,7 +65,6 @@ export const Slider = ({ type, title, watchProvider, path, query }) => {
               )}
           </section>
         </div>
-
       </div>
     );
   }

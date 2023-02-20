@@ -11,16 +11,15 @@ import { Profile_UI } from "../components/Profile/Profile_UI";
 import { SeasonDetails_UI } from "../pages/SeasonDetails/SeasonDetails_UI";
 
 export const PrincipalRouter = () => {
-  const [showHeader, setShowHeader] = useState(true);
+  const [provider, setProvider] = useState(0);
 
   return (
     <HashRouter>
       <Routes>
 
-        <Route path="/" element={<Landing />}>
-          <Route path="/" element={<Home />} />
-          <Route path="movies" element={<Discover_UI type='movie'/>} />
-          <Route path="tv" element={<Discover_UI type='tv'/>} />
+        <Route path="/" element={<Landing setProvider={setProvider}/>}>
+          <Route path="/" element={<Home setProvider={setProvider}/>} />
+          <Route path=":type" element={<Discover_UI provider={provider}/>} />
         </Route>
 
         <Route path="/details/:type/:id" element={<MovieDetails_UI />} />

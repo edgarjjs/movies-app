@@ -9,7 +9,7 @@
 }
 
 .result-image {
-  width: 25%;
+  width: 20%;
   height: 90%;
   margin: 5px;
   border-radius: 10px;
@@ -57,4 +57,15 @@
   font-size: .9rem;
   padding: 3px;
   font-weight: 600;
+}
+
+@media (min-width:720px) {
+  .result-title {
+    font-size: 1.4rem;
+    line-height: normal;
+  }
+
+  .result-description {
+    font-size: 1.2rem;
+  }
 }

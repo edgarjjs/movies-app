@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { getData } from "../../tools/getData";
 import { CarrouselCard } from "./CarrouselCard";
-import back_button from "../../assets/back.png";
+import arrow from "../../assets/back.png";
 
 import "./carrousel.css";
 
@@ -17,7 +17,7 @@ export const Carrousel = ({ type, title, path }) => {
     });
   }, []);
 
-  const translate = { transform: `translateX(-${translatePorcent}%)` }
+  const translate = { transform: `translateX(-${translatePorcent}%)` };
 
   const next = () => {
     setTranslatePorcent((prevState) => (prevState == 80 ? 0 : prevState + 20));
@@ -30,26 +30,11 @@ export const Carrousel = ({ type, title, path }) => {
   return (
     <section className="main-carrousel-container">
 
-      <h2>{title}</h2>
-      <img
-          src={back_button}
-          alt="button-Prev"
-          onClick={prev}
-          className="prev"
-        />
-
-        <img
-          src={back_button}
-          alt="button-Next"
-          onClick={next}
-          className="next"
-        />
-        
       <div className="carrousel-container">
-        <div
-          className="carrousel-card-container"
-          style={translate}
-        >
+        <h2>{title}</h2>
+        <img src={arrow} alt="button-Prev" onClick={prev} className="prev" />
+
+        <div className="carrousel-card-container" style={translate}>
           {data.map(
             (e, index) =>
               index < 5 && (
@@ -57,15 +42,16 @@ export const Carrousel = ({ type, title, path }) => {
                   type={type}
                   background={e.backdrop_path}
                   poster={e.poster_path}
-                  title={e.title}
+                  title={e.title ? e.title : e.name ? e.name : "Sin datos"}
                   key={e.id}
                   id={e.id}
                 />
               )
           )}
         </div>
+        <img src={arrow} alt="button-Next" onClick={next} className="next" />
       </div>
-
+      
     </section>
   );
 };

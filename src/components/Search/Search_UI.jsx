@@ -1,19 +1,30 @@
 import "../Search/search.css";
-import back from "../../assets/back.png";
+import arrow from "../../assets/back.png";
 import { search } from "./search";
 import { useEffect, useState } from "react";
 import { CardSearched } from "../CardSearched/CardSearched";
 
-export const Search_UI = ({ activeSearch, setActiveSearch }) => {
-  const [searchedWords, setSearchedWords] = useState("");
+export const Search_UI = ({
+  activeSearch,
+  setActiveSearch,
+  searchedWords,
+  setSearchedWords,
+}) => {
+
+
   const [apiResponse, setApiResponse] = useState([]);
 
   useEffect(() => {
-    searchedWords &&
-      search(searchedWords).then((data) =>
+    searchedWords 
+    ? search(searchedWords).then((data) =>
         setApiResponse(data.sort((a, b) => b.popularity - a.popularity))
-      );
+      )
+    : setSearchedWords('')
+      setApiResponse([])
+
   }, [searchedWords]);
+
+
 
   return (
     <div
@@ -23,11 +34,11 @@ export const Search_UI = ({ activeSearch, setActiveSearch }) => {
     >
       <div
         className={`input-container ${
-          activeSearch ? "active-search-input" : ""
+          activeSearch ? "active-input-container" : ""
         }`}
       >
         <img
-          src={back}
+          src={arrow}
           alt="back-button"
           className="back-button"
           onClick={() => {
@@ -36,7 +47,7 @@ export const Search_UI = ({ activeSearch, setActiveSearch }) => {
           }}
         />
 
-        {/* Se trea el componente con esta condicion
+        {/* Se trae el componente con esta condicion
         para que funcione el autofocus */}
         {activeSearch ? (
           <input
@@ -44,11 +55,7 @@ export const Search_UI = ({ activeSearch, setActiveSearch }) => {
             className="input-search"
             type="text"
             placeholder="Buscar película o serie"
-            onChange={(e) =>
-              e.target.value
-                ? setSearchedWords(e.target.value)
-                : setApiResponse([])
-            }
+            onChange={(e) => setSearchedWords(e.target.value)}
           />
         ) : (
           <></>
@@ -56,7 +63,7 @@ export const Search_UI = ({ activeSearch, setActiveSearch }) => {
       </div>
 
       <section className="search-results">
-        {apiResponse.length ? (
+        {searchedWords ? (
           apiResponse.map((e) => <CardSearched data={e} key={e.id} />)
         ) : (
           <></>

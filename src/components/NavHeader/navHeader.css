@@ -1,0 +1,36 @@
+.nav-header-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  width: 300px;
+}
+
+.nav-header-container li {
+  list-style: none;
+}
+.nav-header-container li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.6rem;
+  color: white;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.nav-header-container li a.isActive {
+  color: black;
+  font-weight: 600;
+  border: 2px solid white;
+  background-color: var(--secondary);
+}
+.nav-header-container li a:hover {
+  background-color: var(--tertiary);
+}
+
+
+@media (max-width: 719px) {
+  .nav-header-container {
+    display: none;
+  }
+}
