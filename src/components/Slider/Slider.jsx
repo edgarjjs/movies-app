@@ -41,7 +41,7 @@ export const Slider = ({ type, title, watchProvider, path, query, setProvider })
           <div className={`custom-header ${watchProvider}`}>
             <img src={watchProviders[watchProvider]} alt="watch-provider" />
             <button className="button-more">
-              <Link to={`/tv`} onClick={() => setProvider(8)}>Ver más</Link>
+              <Link to={`/tv`}>Ver más</Link>
             </button>
           </div>
         )}

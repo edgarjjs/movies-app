@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header/Header";
-import { Footer } from "../components/Footer";
-import { Fetch } from "../fetch/Fetch";
+import { Footer } from "../components/Footer/Footer";
 
 import './landing.css'
 
@@ -15,8 +14,7 @@ export const Landing = ({ setProvider }) => {
         <Outlet />
       </main>
 
-      {/* <Fetch /> */}
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

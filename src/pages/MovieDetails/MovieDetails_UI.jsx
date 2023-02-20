@@ -8,6 +8,7 @@ import "./movie-details.css";
 import { CardSlider_UI } from "../../components/CardSlider/CardSlider_UI";
 import { ActorCard_UI } from "../../components/ActorCard/ActorCard_UI";
 import { SeasonCard_UI } from "../../components/SeasonCard/SeasonCard_UI";
+import { Footer } from "../../components/Footer/Footer";
 
 export const MovieDetails_UI = () => {
   const [data, setData] = useState({});
@@ -59,6 +60,7 @@ export const MovieDetails_UI = () => {
           </CardSlider_UI>
         </>
       )}
+      <Footer />
     </>
   );
 };

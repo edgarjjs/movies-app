@@ -7,7 +7,7 @@ export const CardSlider_UI = ({ children, bg_color}) => {
 
   return (
     <>
-      <section className="slider-container" style={{backgroundColor:`${bgColor}`}}>
+      <section className="cards-slider-container" style={{backgroundColor:`${bgColor}`}}>
         <div className="cards-slider">
           {children}
         </div>

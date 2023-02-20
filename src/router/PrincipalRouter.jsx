@@ -19,7 +19,7 @@ export const PrincipalRouter = () => {
 
         <Route path="/" element={<Landing setProvider={setProvider}/>}>
           <Route path="/" element={<Home setProvider={setProvider}/>} />
-          <Route path=":type" element={<Discover_UI provider={provider}/>} />
+          <Route path="/:type" element={<Discover_UI provider={provider}/>} />
         </Route>
 
         <Route path="/details/:type/:id" element={<MovieDetails_UI />} />
