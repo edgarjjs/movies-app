@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import default_photo from '../../assets/default_photo.svg'
 import "./actor-card.css";
 
 export const ActorCard_UI = ({ name, character, photo, actorId }) => {
@@ -14,7 +15,9 @@ export const ActorCard_UI = ({ name, character, photo, actorId }) => {
             alt="actor-photo"
           />
         ) : (
-          <div className="empty-photo">Sin foto de perfil</div>
+          <div className="empty-photo">
+            <img src={default_photo} alt="empty-photo" />
+          </div>
         )}
         <div className="actor-details-container">
           <h4 className="actor-name">{name}</h4>

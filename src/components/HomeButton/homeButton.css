@@ -1,4 +1,4 @@
-.home-button {
+.home-button-component {
   position: fixed;
   top: 0;
   right: 0;
@@ -9,10 +9,16 @@
   border-radius: 50%;
   border: 2px solid white;
   background-color: black;
-  z-index: 1;
+  z-index: 2;
 }
 
-.home-button img {
+.home-button-component img {
   width: 100%;
-  filter: invert(79%) sepia(73%) saturate(704%) hue-rotate(346deg) brightness(99%) contrast(93%);
+  filter: var(--filter-secondary);
+}
+
+@media (min-width:520px) {
+  .home-button-component {
+    display: none;
+  }
 }

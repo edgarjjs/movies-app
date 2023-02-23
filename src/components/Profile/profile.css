@@ -28,6 +28,9 @@
 }
 
 .profile-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 210px;
   height: 210px;
   border-radius: 50%;
@@ -35,13 +38,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: center;
-
-
-  /*En caso de que no tenga foto de perfil*/
-  color: lightgray;
-  font-size: 1.6rem;
-  line-height: 160px;
-  text-align: center;
+}
+.profile-photo.empty img{
+  width: 70%;
+  filter: var(--filter-grey);
 }
 
 .person-name{

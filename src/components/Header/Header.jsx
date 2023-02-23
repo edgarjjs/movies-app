@@ -6,6 +6,7 @@ import logo from "../../assets/logo.png";
 import { AsideMenu } from "../AsideMenu/AsideMenu";
 import { Search_UI } from "../Search/Search_UI";
 import { NavHeader } from "../NavHeader/NavHeader";
+import { Link } from "react-router-dom";
 
 export const Header = ({ setProvider }) => {
   const [activeSearch, setActiveSearch] = useState(false);
@@ -13,29 +14,36 @@ export const Header = ({ setProvider }) => {
   const [searchedWords, setSearchedWords] = useState("");
 
   useEffect(() => {
-    !searchedWords && setSearchedWords(prev => '')
+    !searchedWords && setSearchedWords((prev) => "");
   }, [searchedWords]);
 
   return (
     <>
+      <div
+        className={`blur-input-container ${
+          activeSearch ? "blur-input-active" : ""
+        }`}
+        onClick={() => setActiveSearch((prevState) => !prevState)}
+      ></div>
+
       <AsideMenu
         activeAside={activeAside}
         setActiveAside={setActiveAside}
         setProvider={setProvider}
-        className="aside-component"
       />
-
       <header className="header">
         <img
           src={menu}
           alt="menu-button"
-          className="burguer-button"
+          className="header-burguer-button"
           onClick={() => setActiveAside(!activeAside)}
         />
 
-        <div className="page-logo">
-          <img src={logo} alt="" />
-          <p>Movies App</p>
+        <div className="header-page-logo">
+          <Link to="/">
+            <img src={logo} alt="" />
+            Movies App
+          </Link>
         </div>
 
         <Search_UI
@@ -45,29 +53,14 @@ export const Header = ({ setProvider }) => {
           setSearchedWords={setSearchedWords}
         />
 
-        <div className={`main-search-container ${activeSearch?'active-search-container':''}`}>
-          {activeSearch ? (
-            <input
-              autoFocus
-              className="input-header-search"
-              type="text"
-              placeholder="Buscar"
-              onChange={(e) => setSearchedWords(e.target.value)}
-            />
-          ) : (
-            <></>
-          )}
-
-          <img
-            src={search}
-            alt="search-icon"
-            className="search-button"
-            onClick={() => setActiveSearch(!activeSearch)}
-          />
-        </div>
+        <img
+          src={search}
+          alt="search-button"
+          onClick={() => setActiveSearch(!activeSearch)}
+          className="header-search-button"
+        />
 
         <NavHeader />
-
       </header>
     </>
   );

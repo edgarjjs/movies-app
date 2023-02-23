@@ -8,7 +8,7 @@ export const Landing = ({ setProvider }) => {
 
   return (
     <>
-      <Header setProvider={setProvider}/>
+      <Header />
 
       <main className="layout">
         <Outlet />

@@ -68,14 +68,14 @@ export const DetailsSummary = ({ data, director }) => {
 
         {director ? (
           <>
-            <li className={`content ${buttonToggle && "hidden"}`}>
+            <li className={`content ${buttonToggle ? "hidden" : ""}`}>
               <div>
                 <h4>Estado</h4>
                 <p>{data.status}</p>
               </div>
             </li>
 
-            <li className={`content ${buttonToggle && "hidden"}`}>
+            <li className={`content ${buttonToggle ? "hidden" : ""}`}>
               <div>
                 <h4>Presupuesto</h4>
                 <p>
@@ -86,7 +86,7 @@ export const DetailsSummary = ({ data, director }) => {
               </div>
             </li>
 
-            <li className={`content ${buttonToggle && "hidden"}`}>
+            <li className={`content ${buttonToggle ? "hidden" : ""}`}>
               <div>
                 <h4>Recaudado</h4>
                 <p>

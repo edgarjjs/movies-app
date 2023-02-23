@@ -1,5 +1,6 @@
 import "../Search/search.css";
 import arrow from "../../assets/back.png";
+import search_icon from "../../assets/search.svg";
 import { search } from "./search";
 import { useEffect, useState } from "react";
 import { CardSearched } from "../CardSearched/CardSearched";
@@ -10,28 +11,24 @@ export const Search_UI = ({
   searchedWords,
   setSearchedWords,
 }) => {
-
-
   const [apiResponse, setApiResponse] = useState([]);
 
   useEffect(() => {
-    searchedWords 
-    ? search(searchedWords).then((data) =>
-        setApiResponse(data.sort((a, b) => b.popularity - a.popularity))
-      )
-    : setSearchedWords('')
-      setApiResponse([])
-
+    searchedWords
+      ? search(searchedWords).then((data) =>
+          setApiResponse(data.sort((a, b) => b.popularity - a.popularity))
+        )
+      : setSearchedWords("");
+    setApiResponse([]);
   }, [searchedWords]);
 
-
+  const handleClickDesktopSearch = () => {
+    setActiveSearch(prevState => !prevState);
+    setSearchedWords('')
+  }
 
   return (
-    <div
-      className={`search-container ${
-        activeSearch ? "active-search-container" : ""
-      }`}
-    >
+    <>
       <div
         className={`input-container ${
           activeSearch ? "active-input-container" : ""
@@ -40,7 +37,7 @@ export const Search_UI = ({
         <img
           src={arrow}
           alt="back-button"
-          className="back-button"
+          className="back-button-search"
           onClick={() => {
             setActiveSearch(!activeSearch);
             setApiResponse([]);
@@ -48,27 +45,34 @@ export const Search_UI = ({
         />
 
         {/* Se trae el componente con esta condicion
-        para que funcione el autofocus */}
+          para que funcione el autofocus */}
         {activeSearch ? (
           <input
             autoFocus
-            className="input-search"
             type="text"
-            placeholder="Buscar película o serie"
+            placeholder="Buscar película"
             onChange={(e) => setSearchedWords(e.target.value)}
           />
         ) : (
           <></>
         )}
+        <img
+          src={search_icon}
+          alt="search-icon"
+          onClick={handleClickDesktopSearch}
+          className="desktop-search-button"
+        />
       </div>
 
-      <section className="search-results">
+      <section
+        className={`search-results ${activeSearch ? "active-results" : ""}`}
+      >
         {searchedWords ? (
           apiResponse.map((e) => <CardSearched data={e} key={e.id} />)
         ) : (
           <></>
         )}
       </section>
-    </div>
+    </>
   );
 };

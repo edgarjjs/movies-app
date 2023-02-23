@@ -9,6 +9,9 @@ import { CardSlider_UI } from "../../components/CardSlider/CardSlider_UI";
 import { ActorCard_UI } from "../../components/ActorCard/ActorCard_UI";
 import { SeasonCard_UI } from "../../components/SeasonCard/SeasonCard_UI";
 import { Footer } from "../../components/Footer/Footer";
+import { HomeButton } from "../../components/HomeButton/HomeButton";
+import { BackButton } from "../../components/BackButton/BackButton";
+import { BackdropAndPoster } from "./BackdropAndPoster";
 
 export const MovieDetails_UI = () => {
   const [data, setData] = useState({});
@@ -28,39 +31,47 @@ export const MovieDetails_UI = () => {
 
   return (
     <>
-      <MainDetails data={data} director={director} />
+      <BackButton />
+      <HomeButton />
+      <BackdropAndPoster data={data} />
 
-      <h3 className="actors-title">Actores principales</h3>
-      <CardSlider_UI>
-        {credits.map(
-          (e, index) =>
-            index < 15 && (
-              <ActorCard_UI
-                key={e.id}
-                name={e.name}
-                photo={e.profile_path ? e.profile_path : null}
-                character={e.character}
-                actorId={e.id}
-              />
-            )
-        )}
-      </CardSlider_UI>
+      <section className="container-sticky-section">
+        <div className="sticky-white-bar-container">
+          <div className="sticky-white-bar"></div>
+        </div>
+        <MainDetails data={data} director={director} />
 
-      {type === "tv" && (
-        <>
-          <h3 className="seasons-title">Temporadas</h3>
-          <CardSlider_UI bg_color={"black"}>
-            {data.seasons &&
-              data.seasons.map((e) => {
+        <h3 className="actors-title">Actores principales</h3>
+        <CardSlider_UI>
+          {credits.map(
+            (e, index) =>
+              index < 15 && (
+                <ActorCard_UI
+                  key={e.id}
+                  name={e.name}
+                  photo={e.profile_path ? e.profile_path : null}
+                  character={e.character}
+                  actorId={e.id}
+                />
+              )
+          )}
+        </CardSlider_UI>
+
+        {type === "tv" && (
+          <>
+            <h3 className="seasons-title">Temporadas</h3>
+            <CardSlider_UI bg_color={"black"}>
+              {data.seasons &&
+                data.seasons.map((e) => {
                   if (e.season_number > 0 && e.episode_count > 0) {
-                    return (<SeasonCard_UI season={e} key={e.id} id={data.id} />)
+                    return <SeasonCard_UI season={e} key={e.id} id={data.id} />;
                   }
-              }
-              )}
-          </CardSlider_UI>
-        </>
-      )}
-      <Footer />
+                })}
+            </CardSlider_UI>
+          </>
+        )}
+        <Footer />
+      </section>
     </>
   );
 };

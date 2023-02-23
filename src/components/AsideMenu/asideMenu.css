@@ -1,6 +1,7 @@
 /*Estilos contenedor blu de fondo*/
 .aside-container {
   position: fixed;
+  top: 0;
   width: 100%;
   height: 100vh;
   background-color: var(--bg-color-blur);
@@ -8,10 +9,14 @@
   transition: all .3s ease;
   z-index: -9;
 }
+.aside-container.active-blur-aside {
+  opacity: 1;
+  z-index: 9;
+}
 
 /*Estilos contenedor del aside menu*/
 .ul-container {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: -50%;
   display: flex;
@@ -80,14 +85,12 @@
   background-color: #f5c5180c;
 }
 
-/*UX del aside menu*/
+
+
 .active-aside {
   transform: translateX(100%);
 }
-.active-blur-aside {
-  opacity: 1;
-  z-index: 9;
-}
+
 
 @media (min-width: 720px) {
   .aside-container {

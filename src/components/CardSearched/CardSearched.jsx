@@ -1,4 +1,4 @@
-import React from "react";
+import default_poster from '../../assets/default_poster.svg'
 import { NavLink } from "react-router-dom";
 import './cardsearched.css'
 
@@ -16,7 +16,9 @@ export const CardSearched = ({data}) => {
             alt="result-image"
           />
         ) : (
-          <div className="without-image">Imagen no disponible</div>
+          <div className="without-image">
+            <img src={default_poster} alt="default poster" />
+          </div>
         )}
         <div className="result-details">
           <h4 className="result-title">{data.title}</h4>

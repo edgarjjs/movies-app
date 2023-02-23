@@ -5,6 +5,7 @@ import women_icon from "../../assets/women.png";
 import map_icon from "../../assets/map.png";
 import back_button from "../../assets/back.png";
 import flowersRIP from "../../assets/deathday.png"
+import empty_photo from "../../assets/default_photo.svg"
 import { useNavigate } from "react-router-dom";
 
 export const PersonDetails = ({
@@ -29,10 +30,10 @@ export const PersonDetails = ({
         className="back-button-profile"
       />
       <div
-        className="profile-photo"
+        className={`profile-photo ${photo? '' : 'empty'}`}
         style={photo ? { backgroundImage: `url(${base_url + photo})` } : { backgroundColor: 'black' }}
       >
-        {photo ? '' : 'Sin foto de perfil'}
+        {photo ? '' : <img src={empty_photo} alt="empty-photo"></img>}
       </div>
       {deathday ? (
         <div className="deathday">
