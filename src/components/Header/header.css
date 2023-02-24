@@ -1,7 +1,7 @@
 /* Estilos contenedor de todo el header */
 .header {
   position: sticky;
-  top: 0;
+  top: -2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,9 +47,11 @@
 
 /* Estilos search button */
 .header-search-button {
+  position: relative;
   width: 35px;
   margin: 10px;
   filter: var(--filter-grey);
+  z-index: -1;
 }
 .header-search-button:active {
   filter: var(--filter-secondary);

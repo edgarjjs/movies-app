@@ -7,7 +7,7 @@
   height: 50px;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid white;
+  border: 2px solid white;
   z-index: 1;
 }
 .datalist-container.active-datalist {
@@ -26,7 +26,6 @@
   width: 80%;
   height: 100%;
   transition: all .5s ease;
-
 }
 .selected-option img {
   height: 100%;
@@ -40,7 +39,7 @@
 }
 .arrow {
   width: 20%;
-  filter: invert(99%) sepia(71%) saturate(0%) hue-rotate(293deg) brightness(110%) contrast(100%);
+  filter: var(--filter-grey);
   transform: rotate(-90deg);
   cursor: pointer;
   transition: transform .300s ease;
@@ -48,13 +47,13 @@
 
 .arrow.active-datalist {
   transform: rotate(90deg);
-  filter: invert(58%) sepia(94%) saturate(366%) hue-rotate(10deg) brightness(108%) contrast(105%);
+  filter: var(--filter-secondary);
 }
 
 .datalist {
   position: absolute;
-  top: 105%;
-  left: 0;
+  top: 100%;
+  left: -2px;
 
   display: flex;
   flex-direction: column;
@@ -69,11 +68,12 @@
   background-color: rgb(59, 59, 59);
   border-radius: 10px;
 
-  transition: all .5s ease;
+  transition: height .5s ease;
 }
 .datalist.active-datalist {
-  height: 25vh;
-  border: 1px solid var(--secondary);
+  height: 250px;
+  border: 2px solid var(--secondary);
+  z-index: 0;
 }
 
 

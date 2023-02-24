@@ -12,7 +12,7 @@ export const Discover_UI = ({ provider }) => {
   const [selectedGenre, setSelectedGenre] = useState(0);
   const [selectedProvider, setSelectedProvider] = useState(provider);
 
-  const {type} = useParams()
+  const { type } = useParams();
 
   useEffect(() => {
     getData(
@@ -27,7 +27,6 @@ export const Discover_UI = ({ provider }) => {
     getData(`/genre/${type}/list`).then((res) => setGenres(res.genres));
   }, [type]);
 
-
   return (
     <>
       <Genres
@@ -39,7 +38,7 @@ export const Discover_UI = ({ provider }) => {
       {type && type == "tv" ? (
         <section className="filter-tv-container">
           <p className="filter-tv-title">Plataforma:</p>
-          <Filter 
+          <Filter
             selectedProvider={selectedProvider}
             setSelectedProvider={setSelectedProvider}
           />

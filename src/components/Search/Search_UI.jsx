@@ -28,7 +28,9 @@ export const Search_UI = ({
   }
 
   return (
-    <>
+    <section className={`main-search-container ${
+      activeSearch ? "active-background-container" : ""
+    }`}>
       <div
         className={`input-container ${
           activeSearch ? "active-input-container" : ""
@@ -64,7 +66,7 @@ export const Search_UI = ({
         />
       </div>
 
-      <section
+      <div
         className={`search-results ${activeSearch ? "active-results" : ""}`}
       >
         {searchedWords ? (
@@ -72,7 +74,7 @@ export const Search_UI = ({
         ) : (
           <></>
         )}
-      </section>
-    </>
+      </div>
+    </section>
   );
 };

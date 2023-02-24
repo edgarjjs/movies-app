@@ -7,11 +7,11 @@
   background-color: var(--bg-color-blur);
   opacity: 0;
   transition: all .3s ease;
-  z-index: -9;
+  z-index: -2;
 }
 .aside-container.active-blur-aside {
   opacity: 1;
-  z-index: 9;
+  z-index: 2;
 }
 
 /*Estilos contenedor del aside menu*/
