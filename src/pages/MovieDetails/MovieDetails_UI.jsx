@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { ScrollRestoration, useParams } from "react-router-dom";
 import { getData } from "../../tools/getData";
 
 import { MainDetails } from "./MainDetails";
@@ -31,6 +31,7 @@ export const MovieDetails_UI = () => {
 
   return (
     <>
+      <ScrollRestoration/>
       <BackButton />
       <HomeButton />
       <BackdropAndPoster data={data} />

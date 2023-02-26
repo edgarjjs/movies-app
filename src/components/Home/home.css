@@ -1,0 +1,13 @@
+.main-sliders-container {
+  width: 100%;
+}
+
+
+
+@media (min-width: 719px) {
+  .main-sliders-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

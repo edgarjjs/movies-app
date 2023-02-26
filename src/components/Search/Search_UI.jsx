@@ -27,6 +27,8 @@ export const Search_UI = ({
     setSearchedWords('')
   }
 
+
+  
   return (
     <section className={`main-search-container ${
       activeSearch ? "active-background-container" : ""

@@ -17,6 +17,17 @@ export const Header = ({ setProvider }) => {
     !searchedWords && setSearchedWords((prev) => "");
   }, [searchedWords]);
 
+  useEffect(() => {
+    if (activeSearch || activeAside) {
+      body.style.overflow='hidden'
+    } else {
+      body.style.removeProperty('overflow')
+    }
+  }, [activeSearch, activeAside])
+
+  // Seleccionando el body para cancelar su scroll
+  const body = document.getElementsByTagName('body')[0];
+
   return (
     <>
       <div
@@ -31,6 +42,7 @@ export const Header = ({ setProvider }) => {
         setActiveAside={setActiveAside}
         setProvider={setProvider}
       />
+      
       <header className="header">
         <img
           src={menu}
@@ -46,13 +58,6 @@ export const Header = ({ setProvider }) => {
           </Link>
         </div>
 
-        <Search_UI
-          activeSearch={activeSearch}
-          setActiveSearch={setActiveSearch}
-          searchedWords={searchedWords}
-          setSearchedWords={setSearchedWords}
-        />
-
         <img
           src={search}
           alt="search-button"
@@ -62,6 +67,13 @@ export const Header = ({ setProvider }) => {
 
         <NavHeader />
       </header>
+
+      <Search_UI
+        activeSearch={activeSearch}
+        setActiveSearch={setActiveSearch}
+        searchedWords={searchedWords}
+        setSearchedWords={setSearchedWords}
+      />
     </>
   );
 };
