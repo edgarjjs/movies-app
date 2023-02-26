@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer/Footer";
 
 import './landing.css'
 
-export const Landing = ({ setProvider }) => {
+export const Landing = () => {
 
   return (
     <>

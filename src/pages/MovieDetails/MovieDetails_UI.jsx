@@ -13,6 +13,7 @@ import { HomeButton } from "../../components/HomeButton/HomeButton";
 import { BackButton } from "../../components/BackButton/BackButton";
 import { BackdropAndPoster } from "./BackdropAndPoster";
 
+
 export const MovieDetails_UI = () => {
   const [data, setData] = useState({});
   const [credits, setCredits] = useState([]);
@@ -32,6 +33,7 @@ export const MovieDetails_UI = () => {
   return (
     <>
       <ScrollRestoration/>
+      
       <BackButton />
       <HomeButton />
       <BackdropAndPoster data={data} />

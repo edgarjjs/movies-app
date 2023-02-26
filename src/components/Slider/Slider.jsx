@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { useContextData } from "../../Hooks/useContextData";
+import { Link } from "react-router-dom";
+
 import { MovieCard } from "../MovieCard/MovieCard";
 import { getData } from "../../tools/getData";
 import DisneyPlus from "../../assets/watchProviders/DisneyPlus.svg";
@@ -8,24 +11,23 @@ import ParamountPlus from "../../assets/watchProviders/ParamountPlus.svg";
 import StarPlus from "../../assets/watchProviders/StarPlus.svg";
 
 import "../Slider/slider.css";
-import { Link } from "react-router-dom";
 
-export const Slider = ({ type, title, watchProvider, path, query, setProvider }) => {
+export const Slider = ({ type, title, watchProvider, path, query }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { selectedProvider, setSelectedProvider } = useContextData();
 
   useEffect(() => {
     getData(path, `${query ? query : ""}`).then((res) => setData(res.results));
   }, []);
 
   const watchProviders = {
-    disney: DisneyPlus,
-    hbo: HBOMax,
-    netflix: Netflix,
-    paramount: ParamountPlus,
-    star: StarPlus,
+    disney: [DisneyPlus, 337],
+    hbo: [HBOMax, 384],
+    netflix: [Netflix, 8],
+    paramount: [ParamountPlus, 531],
+    star: [StarPlus, 619],
   };
-
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -39,9 +41,9 @@ export const Slider = ({ type, title, watchProvider, path, query, setProvider })
           </div>
         ) : (
           <div className={`custom-header ${watchProvider}`}>
-            <img src={watchProviders[watchProvider]} alt="watch-provider" />
+            <img src={watchProviders[watchProvider][0]} alt="watch-provider" />
             <button className="button-more">
-              <Link to={`/tv`}>Ver más</Link>
+              <Link to={`/tv`} onClick={() => setSelectedProvider(watchProviders[watchProvider][1])} >Ver más</Link>
             </button>
           </div>
         )}

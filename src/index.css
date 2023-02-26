@@ -24,10 +24,11 @@ html {
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: rgb(175, 175, 175);
 }
 
 #root {
+  background-color: var(--bg-color);
   position: relative;
 }
 

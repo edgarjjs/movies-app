@@ -14,11 +14,11 @@ export const PrincipalRouter = () => {
     return (
       <HashRouter>
           <Routes>
-            <Route path="/" element={<Landing />} >
-              <Route path="/" element={<Home />} />
+            <Route path="/" element={<Landing setProvider={setProvider} />} >
+              <Route path="/" element={<Home setProvider={setProvider} />} />
               <Route
                 path="/:type"
-                element={<Discover_UI />}
+                element={<Discover_UI provider={provider} />}
               />
             </Route>
 
@@ -33,40 +33,3 @@ export const PrincipalRouter = () => {
       </HashRouter>
     );
   };
-
-
-  // const [provider, setProvider] = useState(0)
-
-  // export const enrutador = createHashRouter([
-  //   {
-  //     path: "/",
-  //     element: <Landing setProvider={setProvider} />,
-  //     children: [
-  //       {
-  //         path: "/",
-  //         element: <Home setProvider={setProvider} />,
-  //       },
-  //       {
-  //         path: "/:type",
-  //         element: <Discover_UI provider={provider} />,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     path: "/details/:type/:id",
-  //     element: <MovieDetails_UI />,
-  //   },
-  //   {
-  //     path: "/details/tv/:id/season/:season",
-  //     element: <SeasonDetails_UI />,
-  //   },
-  //   {
-  //     path: "/person/:id",
-  //     element: <Profile_UI />,
-  //   },
-  //   {
-  //     path: "*",
-  //     element: <h1>PÁGINA NO ENCONTRADA - ERROR 404</h1>,
-  //   },
-  // ]);
-

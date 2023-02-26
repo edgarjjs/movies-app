@@ -1,24 +1,30 @@
-import DisneyPlus from "../../assets/watchProviders/DisneyPlus.svg";
 import globe from "../../assets/Globe_icon.svg";
 import arrow from "../../assets/back.png";
 
 import { getData } from "../../tools/getData";
 import { useEffect, useState } from "react";
+import { useContextData } from "../../Hooks/useContextData";
+
 import "./filter.css";
 
-export const Filter = ({ selectedProvider, setSelectedProvider }) => {
+export const Filter = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [providers, setProviders] = useState([]);
-
-  const filterProvidersId = [0, 8, 119, 337, 167, 531, 384, 619, 350, 283, 339];
+  const {
+    selectedProvider,
+    setSelectedProvider,
+    popularTvProviders,
+    setPopularTvProviders,
+  } = useContextData();
 
   useEffect(() => {
     getData("/watch/providers/tv", "&watch_region=MX").then((res) =>
-      setProviders(
+    setPopularTvProviders(
         res.results.filter((e) => filterProvidersId.includes(e.provider_id))
       )
     );
   }, []);
+
+  const filterProvidersId = [8, 119, 337, 167, 531, 384, 619, 350, 283, 339];
 
   const handleClickInput = (id) => {
     setSelectedProvider(id);
@@ -38,13 +44,14 @@ export const Filter = ({ selectedProvider, setSelectedProvider }) => {
           isFilterOpen ? "active-datalist" : ""
         }`}
       >
-        {providers && selectedProvider === 0 ? (
+        {/* Contenedor de la opción seleccionada */}
+        {!selectedProvider ? (
           <article className="selected-option" onClick={handleClickFilter}>
             <img src={globe} alt={`icono global`} />
             <p>Todas</p>
           </article>
         ) : (
-          providers
+          popularTvProviders
             .filter((e) => e.provider_id === selectedProvider)
             .map((e) => (
               <article
@@ -68,14 +75,15 @@ export const Filter = ({ selectedProvider, setSelectedProvider }) => {
           onClick={handleClickFilter}
         />
 
+        {/* Datos de la lista desplegable */}
         <div className={`datalist ${isFilterOpen ? "active-datalist" : ""}`}>
           <article className="input" onClick={() => handleClickInput(0)}>
             <img src={globe} alt={`icono global`} />
             <p>Todas</p>
           </article>
 
-          {providers &&
-            providers.map((e) => (
+          {popularTvProviders &&
+            popularTvProviders.map((e) => (
               <article
                 className="input"
                 key={e.provider_id}
