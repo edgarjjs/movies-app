@@ -19,14 +19,22 @@ export const Header = ({ setProvider }) => {
 
   useEffect(() => {
     if (activeSearch || activeAside) {
-      body.style.overflow='hidden'
+      body.style.overflow = "hidden";
     } else {
-      body.style.removeProperty('overflow')
+      body.style.removeProperty("overflow");
     }
-  }, [activeSearch, activeAside])
+  }, [activeSearch, activeAside]);
+  
 
   // Seleccionando el body para cancelar su scroll
-  const body = document.getElementsByTagName('body')[0];
+  const body = document.getElementsByTagName("body")[0];
+
+  const handleBlurClick = () => {
+    setActiveSearch((prevState) => !prevState);
+    setSearchedWords('')
+  }
+
+
 
   return (
     <>
@@ -34,7 +42,7 @@ export const Header = ({ setProvider }) => {
         className={`blur-input-container ${
           activeSearch ? "blur-input-active" : ""
         }`}
-        onClick={() => setActiveSearch((prevState) => !prevState)}
+        onClick={handleBlurClick}
       ></div>
 
       <AsideMenu
@@ -42,7 +50,7 @@ export const Header = ({ setProvider }) => {
         setActiveAside={setActiveAside}
         setProvider={setProvider}
       />
-      
+
       <header className="header">
         <img
           src={menu}
@@ -58,12 +66,26 @@ export const Header = ({ setProvider }) => {
           </Link>
         </div>
 
-        <img
-          src={search}
-          alt="search-button"
+        <div
+          className={`header-search-container ${activeSearch ? "active" : ""}`}
           onClick={() => setActiveSearch(!activeSearch)}
-          className="header-search-button"
-        />
+        >
+          <img
+            src={search}
+            alt="search-button"
+            className="header-search-button"
+          />
+          {activeSearch ? (
+            <input 
+              autoFocus 
+              type="search" 
+              className="header-search-input" 
+              onChange={(e) => setSearchedWords(e.target.value)}              
+              />
+          ) : (
+            <></>
+          )}
+        </div>
 
         <NavHeader />
       </header>

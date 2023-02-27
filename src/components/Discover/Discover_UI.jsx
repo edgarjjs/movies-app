@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { ScrollRestoration, useParams } from "react-router-dom";
 import { useContextData } from "../../Hooks/useContextData";
 
 import { getData } from "../../tools/getData";
@@ -32,6 +32,7 @@ export const Discover_UI = () => {
 
   return (
     <>
+      <ScrollRestoration />
       <Genres
         genres={genres}
         selectedGenre={selectedGenre}

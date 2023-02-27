@@ -1,4 +1,7 @@
 
+.header {
+  display: none;
+}
 
 /* Estilos contenedor de wallpaper y poster */
 .main-poster-backdrop-container {
@@ -18,7 +21,6 @@
 .backdrop-image {
   width: 100%;
 }
-
 .without-backdrop {
   position: sticky;
   top: 0;
@@ -26,7 +28,6 @@
   height: 200px;
   background-color: #3c3c3c;
 }
-
 
 
 /* Estilos del poster y aside info */
@@ -37,7 +38,6 @@
   border-radius: 20px 20px 0 0;
   z-index: 1;
 }
-
 .poster-image {
   position: relative;
   top: -20px;
@@ -45,7 +45,6 @@
   margin: 0 12px;
   border-radius: 10px;
 }
-
 .poster-aside {
   display: flex;
   flex-direction: column;
@@ -54,13 +53,11 @@
   height: 100%;
   gap: 10px;
 }
-
 .poster-aside h2 {
   font-size: 2.2rem;
   color: lightgray;
   text-align: center;
 }
-
 .poster-aside p {
   padding: 0 10px;
   font-size: 1.3rem;
@@ -68,24 +65,22 @@
   text-align: center;
   color: lightgray;
 }
-
 .poster-aside-rate {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
 }
-
 .poster-aside-rate img {
   width: 10%;
 }
-
 .poster-aside-rate p {
   font-family: var(--font);
   font-size: 1.5rem;
   font-weight: 300;
   color: lightgray;
 }
+
 
 /* Estilos generos */
 .genres-container {
@@ -221,6 +216,10 @@
 }
 
 @media (min-width:520px) {
+
+  .header {
+    display: flex;
+  }
   
   .poster-container {
     position: relative;

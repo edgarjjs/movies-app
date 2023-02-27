@@ -60,12 +60,6 @@ export const Search_UI = ({
         ) : (
           <></>
         )}
-        <img
-          src={search_icon}
-          alt="search-icon"
-          onClick={handleClickDesktopSearch}
-          className="desktop-search-button"
-        />
       </div>
 
       <div

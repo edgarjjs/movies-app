@@ -8,6 +8,7 @@ import "./movie-details.css";
 import { CardSlider_UI } from "../../components/CardSlider/CardSlider_UI";
 import { ActorCard_UI } from "../../components/ActorCard/ActorCard_UI";
 import { SeasonCard_UI } from "../../components/SeasonCard/SeasonCard_UI";
+import { Header } from '../../components/Header/Header'
 import { Footer } from "../../components/Footer/Footer";
 import { HomeButton } from "../../components/HomeButton/HomeButton";
 import { BackButton } from "../../components/BackButton/BackButton";
@@ -33,7 +34,7 @@ export const MovieDetails_UI = () => {
   return (
     <>
       <ScrollRestoration/>
-      
+      <Header />
       <BackButton />
       <HomeButton />
       <BackdropAndPoster data={data} />

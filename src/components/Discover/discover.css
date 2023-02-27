@@ -25,10 +25,10 @@
   border-radius: 10px;
 }
 
-.active {
+/* .active {
   background-color: var(--secondary);
   border: 1px solid var(--secondary);
-}
+} */
 
 .filter-tv-container {
   position: relative;
