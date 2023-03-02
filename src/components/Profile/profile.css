@@ -19,14 +19,6 @@
   background-color: lightgrey;
 }
 
-.back-button-profile {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 15%;
-  border-radius: 50%;
-}
-
 .profile-photo {
   display: flex;
   align-items: center;
@@ -106,27 +98,27 @@
 
 .birthdate-icon {
   width: 50%;
-  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(331deg) brightness(103%) contrast(101%);
+  filter: var(--filter-white);
 }
 
 .map-icon {
   width: 30%;
-  filter: invert(63%) sepia(89%) saturate(1014%) hue-rotate(50deg) brightness(101%) contrast(106%);
+  filter: var(--filter-green);
 }
 
 .men-icon {
   width: 60%;
-  filter: invert(65%) sepia(57%) saturate(3809%) hue-rotate(177deg) brightness(89%) contrast(91%);
+  filter: var(--filter-blue);
 }
 
 .women-icon {
   width: 70%;
-  filter: invert(46%) sepia(29%) saturate(5347%) hue-rotate(303deg) brightness(101%) contrast(101%);
+  filter: var(--filter-pink);
 }
 
 .popularity-icon {
   width: 50%;
-  filter: invert(63%) sepia(100%) saturate(447%) hue-rotate(359deg) brightness(104%) contrast(105%);
+  filter: var(--filter-secondary);
 }
 
 

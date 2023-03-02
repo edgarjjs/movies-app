@@ -15,6 +15,11 @@
   --filter-secondary: invert(87%) sepia(47%) saturate(2988%) hue-rotate(347deg) brightness(100%) contrast(92%);
   --filter-tertiary: invert(54%) sepia(90%) saturate(388%) hue-rotate(128deg) brightness(90%) contrast(87%);
   --filter-grey: invert(80%) sepia(4%) saturate(7%) hue-rotate(7deg) brightness(88%) contrast(95%);
+  --filter-pink: invert(46%) sepia(29%) saturate(5347%) hue-rotate(303deg) brightness(101%) contrast(101%);
+  --filter-blue: invert(65%) sepia(57%) saturate(3809%) hue-rotate(177deg) brightness(89%) contrast(91%);
+  --filter-green: invert(63%) sepia(89%) saturate(1014%) hue-rotate(50deg) brightness(101%) contrast(106%);
+  --filter-white: invert(100%) sepia(0%) saturate(2%) hue-rotate(331deg) brightness(103%) contrast(101%);
+
 }
 
 html {
@@ -24,12 +29,28 @@ html {
 }
 
 body {
-  background-color: rgb(175, 175, 175);
+  background-color: var(--bg-color);
 }
 
 #root {
   background-color: var(--bg-color);
   position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  width: 50%;
+}
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: rgb(107, 107, 107);
 }
 
 @media (min-width:1500px) {

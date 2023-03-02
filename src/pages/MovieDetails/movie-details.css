@@ -1,5 +1,5 @@
-
-.header {
+.poster-aside-desktop,
+.poster-description {
   display: none;
 }
 
@@ -10,7 +10,6 @@
   background-color: var(--bg-color);
   touch-action: none;
 }
-
 
 /*Estilos wallpaper de fondo*/
 .backdrop-container {
@@ -28,7 +27,6 @@
   height: 200px;
   background-color: #3c3c3c;
 }
-
 
 /* Estilos del poster y aside info */
 .poster-container {
@@ -58,7 +56,7 @@
   color: lightgray;
   text-align: center;
 }
-.poster-aside p {
+.tagline {
   padding: 0 10px;
   font-size: 1.3rem;
   font-style: italic;
@@ -80,7 +78,6 @@
   font-weight: 300;
   color: lightgray;
 }
-
 
 /* Estilos generos */
 .genres-container {
@@ -113,7 +110,7 @@
   top: 0;
   border-radius: 15px 15px 0 0;
   background-color: var(--bg-color-container);
-  z-index: 3;
+  z-index: 2;
 }
 
 .sticky-white-bar-container {
@@ -156,7 +153,7 @@
   padding: 0 10px;
   font-size: 1.8rem;
   color: lightgray;
-  text-align:justify;
+  text-align: justify;
 }
 .details-summary {
   text-align: center;
@@ -215,24 +212,23 @@
   border-radius: 20px 20px 0 0;
 }
 
-@media (min-width:520px) {
-
+@media (min-width: 520px) {
   .header {
     display: flex;
   }
-  
+
   .poster-container {
     position: relative;
     display: flex;
     align-items: center;
   }
-  
+
   .poster-image {
     width: 45%;
     margin: 10px;
     border-radius: 20px;
   }
-  
+
   .poster-aside h2 {
     padding: 10px;
     margin-top: 25px;
@@ -240,15 +236,15 @@
     font-size: 2.2rem;
     color: lightgray;
   }
-  
-  .poster-aside p {
+
+  .tagline {
     padding: 10px;
     font-family: var(--font);
     font-size: 1.3rem;
     font-style: italic;
     color: lightgray;
   }
-  
+
   .poster-aside-info {
     margin-top: 10px;
     padding-left: 10px;
@@ -257,16 +253,149 @@
     align-items: center;
     gap: 4px;
   }
-  
+
   .poster-aside-info img {
     width: 10%;
   }
-  
+
   .poster-aside-info p {
     font-family: var(--font);
     font-size: 1.5rem;
     font-weight: 300;
     color: lightgray;
   }
+}
 
+@media (min-width: 720px) {
+  .genres-container,
+  .poster-aside,
+  .sticky-white-bar-container,
+  .description,
+  .button-show-more,
+  .poster-aside-rate {
+    display: none;
+  }
+  .content.hidden {
+    display: block;
+  }
+
+  /* Estilos contenedor de wallpaper y poster */
+  .main-poster-backdrop-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--bg-color);
+    touch-action: auto;
+  }
+
+  /*Estilos wallpaper de fondo*/
+  .backdrop-container {
+    width: 100%;
+    height: fit-content;
+    max-height: 500px;
+  }
+  .backdrop-image {
+    object-fit: contain;
+    opacity: 0.3;
+  }
+  .without-backdrop {
+    position: relative;
+    height: 430px;
+  }
+
+  /* Estilos del poster y aside info */
+  .poster-container {
+    position: absolute;
+    width: 100%;
+    z-index: inherit;
+  }
+  .poster-image {
+    position: static;
+    width: 20%;
+    margin: 0 25px;
+  }
+  .tagline {
+    font-size: 1.5rem;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .poster-aside-desktop {
+    display: block;
+    margin-right: 15px;
+    padding: 15px;
+    width: 100%;
+    background-color: #00000071;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .poster-aside-desktop h2 {
+    font-size: 2.5rem;
+    color: white;
+    padding: 10px 0;
+  }
+  .poster-aside-desktop h3 {
+    display: inline-block;
+    margin: 10px 0;
+    padding-right: 20px;
+    font-size: 2.1rem;
+    color: var(--secondary);
+    border-top: 2px solid var(--secondary);
+  }
+  .poster-aside-desktop p {
+    text-align: justify;
+    font-size: 1.7rem;
+    color: lightgray;
+  }
+  .poster-aside-rate-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 10px;
+    border: 3px solid var(--tertiary);
+    border-radius: 20px 20px 20px 0;
+    background-color: transparent;
+  }
+  .poster-aside-rate-desktop img {
+    width: 30%;
+  }
+  .poster-aside-rate-desktop p {
+    color: white;
+    font-size: 1.6rem;
+  }
+  .poster-aside-desktop-genres {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .poster-aside-desktop-genres ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 10px 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  .poster-aside-desktop-genres ul li {
+    font-size: 1.8rem;
+    list-style: none;
+    padding: 5px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+
+  .details-summary {
+    padding-top: 10px;
+  }
+
+  .container-sticky-section {
+    position: static;
+  }
 }

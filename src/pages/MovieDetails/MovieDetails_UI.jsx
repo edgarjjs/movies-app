@@ -10,8 +10,6 @@ import { ActorCard_UI } from "../../components/ActorCard/ActorCard_UI";
 import { SeasonCard_UI } from "../../components/SeasonCard/SeasonCard_UI";
 import { Header } from '../../components/Header/Header'
 import { Footer } from "../../components/Footer/Footer";
-import { HomeButton } from "../../components/HomeButton/HomeButton";
-import { BackButton } from "../../components/BackButton/BackButton";
 import { BackdropAndPoster } from "./BackdropAndPoster";
 
 
@@ -29,14 +27,12 @@ export const MovieDetails_UI = () => {
       type === "movie" &&
         setDirector(res.crew.filter((e) => e.job == "Director")[0].name);
     });
-  }, []);
+  }, [id]);
 
   return (
     <>
       <ScrollRestoration/>
       <Header />
-      <BackButton />
-      <HomeButton />
       <BackdropAndPoster data={data} />
 
       <section className="container-sticky-section">

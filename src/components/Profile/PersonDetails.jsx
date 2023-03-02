@@ -23,12 +23,6 @@ export const PersonDetails = ({
 
   return (
     <section className="person-details-container">
-      <img
-        src={back_button}
-        alt="back-button"
-        onClick={() => navigate(-1)}
-        className="back-button-profile"
-      />
       <div
         className={`profile-photo ${photo? '' : 'empty'}`}
         style={photo ? { backgroundImage: `url(${base_url + photo})` } : { backgroundColor: 'black' }}

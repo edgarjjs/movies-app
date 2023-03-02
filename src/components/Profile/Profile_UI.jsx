@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { PersonDetails } from "./PersonDetails";
 import { getData } from "../../tools/getData";
-import { useParams } from "react-router-dom";
+import { ScrollRestoration, useParams } from "react-router-dom";
 import { MovieCard } from "../MovieCard/MovieCard";
+import { BackButton } from '../BackButton/BackButton'
 
 import "./profile.css";
 import { HomeButton } from "../HomeButton/HomeButton";
@@ -19,7 +20,9 @@ export const Profile_UI = () => {
 
   return (
     <>
+      <ScrollRestoration/>
       <HomeButton />
+      <BackButton />
       <div className="main-profile-container">
         <PersonDetails
           birthDate={data.birthday}

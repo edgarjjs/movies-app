@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import default_photo from '../../assets/default_photo.svg'
 import "./actor-card.css";
 
@@ -6,7 +6,7 @@ export const ActorCard_UI = ({ name, character, photo, actorId }) => {
   const base_url = "https://image.tmdb.org/t/p/w185";
 
   return (
-    <NavLink to={"/person/" + actorId}>
+    <Link to={"/person/" + actorId}>
       <article className="actor-card-container">
         { photo ? (
           <img
@@ -24,6 +24,6 @@ export const ActorCard_UI = ({ name, character, photo, actorId }) => {
           <p className="actor-rol">{character}</p>
         </div>
       </article>
-    </NavLink>
+    </Link>
   );
 };

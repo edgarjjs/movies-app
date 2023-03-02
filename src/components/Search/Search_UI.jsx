@@ -72,5 +72,5 @@ export const Search_UI = ({
         )}
       </div>
     </section>
-  );
+  ); 
 };
