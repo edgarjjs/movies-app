@@ -9,8 +9,8 @@ import { NavHeader } from "../NavHeader/NavHeader";
 import { Link } from "react-router-dom";
 
 export const Header = ({ setProvider }) => {
-  const [activeSearch, setActiveSearch] = useState(false);
   const [activeAside, setActiveAside] = useState(false);
+  const [activeSearch, setActiveSearch] = useState(false);
   const [searchedWords, setSearchedWords] = useState("");
 
   useEffect(() => {

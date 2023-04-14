@@ -27,6 +27,7 @@ export const Search_UI = ({
     setSearchedWords('')
   }
 
+  console.log(apiResponse)
 
   
   return (

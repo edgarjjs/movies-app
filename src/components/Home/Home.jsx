@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { API_KEY } from "../../key";
-import { MainDetails } from "../../pages/MovieDetails/MainDetails";
 import { Carrousel } from "../Carrousel/Carrousel";
-import { Fetch } from "../../fetch/Fetch";
 import { Slider } from "../Slider/Slider";
 import './home.css'
 

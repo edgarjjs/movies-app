@@ -7,7 +7,7 @@ export const CardSearched = ({data}) => {
   const base_url = "https://image.tmdb.org/t/p/w200";
   
   return (
-    <NavLink to={"/details/movie/" + data.id} className="searched-card-container" >
+    <NavLink to={"/details/movie/" + data.id} className="searched-card-container">
 
         {data.poster_path ? (
           <img
